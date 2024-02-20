@@ -1,4 +1,4 @@
-### SpringBoot Notlarım 
+# SpringBoot Notlarım 
 ## Properties Dosyası
 •	spring.mvc.view.suffix, dosya uzantısını belirtmek için kullanılır.  
 spring.mvc.view.prefix, Spring MVC’de kullanılan bir yapılandırma ayarıdır.Diyelim ki uygulamada **/src/main/resources/META-INF/resources/WEB-INF/jsp/fileName.jsp** pathinde fileName.jsp dosyası bulunuyor. Bu dosyayı kullanabilmek için ; 
