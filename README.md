@@ -52,11 +52,12 @@ Buradaki name jsp dosyasındaki name ile eşleşir;
 •	**ModelMap**, Spring Framework’te bir model objesinin bir view’e bağlamak için kullanılan kütüphanedir. Model objesini saklamak ve view’i iletirken dinamik olarak değiştirmek için kullanılır.  Spring Framework’ün eski sürümlerinde daha yaygın olarak kullanılmaktadır. Daha yeni sürümlerde, Model classı tercih edilmektedir.   
 •	**Log Levelları** 
 
-		**OFF** tamamen bütün logların kapalı olduğu, ALL bütün loğların açık olduğu log seviyesidir.
-	 	**Trace** en detaylı bilgilerin verildiği log seviyesidir. Bu log seviyesinde harici ir log dosyası kullanımı gereklidir. 
-		**Debug** yazılımcıların en çok kullanıdığı log seviyesidir.
-		**Info** genellikle son kullanıcılar tarafından kullanılan log seviyesidir. 
-		**Fatal** uygulamada kalıcı bir hata, çökme tehlikesi olan durumlarda basılmalıdır.  
-		Eğer bir log seviyesi tanımlarsak; tanımladığımız log seviyesi ve üzerindeki loglar görülebilirken altındakiler görülmez. Örnek; log seviyesi error ise off,
+	
+	o	**OFF** tamamen bütün logların kapalı olduğu, ALL bütün loğların açık olduğu log seviyesidir.
+	o 	**Trace** en detaylı bilgilerin verildiği log seviyesidir. Bu log seviyesinde harici ir log dosyası kullanımı gereklidir. 
+	o	**Debug** yazılımcıların en çok kullanıdığı log seviyesidir.
+	o	**Info** genellikle son kullanıcılar tarafından kullanılan log seviyesidir. 
+	o	**Fatal** uygulamada kalıcı bir hata, çökme tehlikesi olan durumlarda basılmalıdır.  
+	o	Eğer bir log seviyesi tanımlarsak; tanımladığımız log seviyesi ve üzerindeki loglar görülebilirken altındakiler görülmez. Örnek; log seviyesi error ise off,
  fatal ve error seviyesi loğlar görülebilecek ancak diğer loğlar görülemeyecektir. 
 
