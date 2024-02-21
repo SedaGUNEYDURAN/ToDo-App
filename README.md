@@ -15,6 +15,10 @@ return "fileName";
 }
 ```
 
+•	Sadece bir classın log levelını ayarlamak istersek **logging.level.** devamına classın pathini eklemeliyiz.Örneğin ;
+**logging.level.com.toDoApp.login=debug**
+
+
 ## Annotations
 **@ResponseBody** annotation’ı, bir controller methodunun return değerin doğrudan http respondun gövdesine yazdırmaya yarar. Bu annotayion ile @Controller annotation’ı birlikte kullanılmalıdır. 
 
