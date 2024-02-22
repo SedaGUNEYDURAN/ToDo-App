@@ -63,7 +63,7 @@ Buradaki name jsp dosyasındaki name ile eşleşir;
 •	**DispatcherServlet**, Spring frameworkün web uygulamalarında kullanılan merkezi bir servlettir. Gelen http isteklerini karşılar.  İstek URL’ini analiz eder. Uygun controllerı bulur ve çalıştırır. Controllerdan gelen modeli ve viewı işler ve sonucu clienta gönderir. Web.xml dosyasında tanımlıdır.     
 •	Pom.xml --> dependency management  
 •	Web.xml --> define web app configuration  
-•	Context.xml --> manage spring beans
+•	Context.xml --> manage spring beans  
 •	NFRs(Non-Functional Requirements) --> implement non functional requirement
 
 ### Log Level 
