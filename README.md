@@ -67,6 +67,8 @@ Buradaki name jsp dosyasındaki name ile eşleşir;
 •	NFRs(Non-Functional Requirements) --> implement non functional requirement
 
 ### Log Level 
+•	Log level sıralaması;
+	**OFF - FATAL - ERROR- WARN - INFO - DEBUG - TRACE - ALL **
 •	**OFF** tamamen bütün logların kapalı olduğu, ALL bütün loğların açık olduğu log seviyesidir.  
 • 	**Trace** en detaylı bilgilerin verildiği log seviyesidir. Bu log seviyesinde harici ir log dosyası kullanımı gereklidir.   
 •	**Debug** yazılımcıların en çok kullanıdığı log seviyesidir.  
