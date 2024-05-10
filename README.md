@@ -45,6 +45,9 @@ Buradaki name jsp dosyasındaki name ile eşleşir;
 </html>
 ```
 
+**@Service**, bir classı servis olarak işaretlemek için kullanılır ve bu classlar Spring beanler olarak kaydedilir. Spring beanler olarak kaydedildikleri için de bu classlar, dependency injection kullarak diğer spring tarafından kullanılan bileşenlere enjekte(@Autowired ya da constructor injection kullanılarak) edilebilirler. 
+
+
 ## HTML
 •	Form method, HTML form gönderirken verilerin sunucuya nasıl iletileceğini belirleyen bir HTML ögesidir. Method niteliği formun içinde yer alır ve iki ana değer kabul eder;  
   	**Get** : Bu metodda form verileri URL’e eklenir ve sunucuya iletilir. Get metodu için veri boyutu(genellikle 2048 karakter) kısıtlıdır. Gizli verilerin gönderilmesinde güvenli değildir.(bilgiler URL’de açık duruyor nasıl güvenli olsun ?)   
