@@ -75,8 +75,9 @@ Buradaki name jsp dosyasındaki name ile eşleşir;
 **<%@ taglib**, JSP sayfasında bir tag kütüphanesini tanımlar.
 **prefix="c"**, tag kütüphanesine bir ön ek atar. Bu ön ek, tag kütüphanesini kullanırken kullanılacaktır. c ön ekini c:out tagini kullanmak için kullanırız.
 **uri="https://docs.oracle.com/javaee/5/jstl/1.1/docs/tlddocs/c/tld-summary.html"**, bu özellik tag kütüphanesinin URI'sini belirtir, tag kütüphanesinin nerede bulunacağını belirtir.   
-• 	```html
-<table class="table">
+• 	
+```html  
+			<table class="table">
 				<thead>
 					<tr>
 						<th>id</th>
