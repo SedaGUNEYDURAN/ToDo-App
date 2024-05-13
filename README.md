@@ -55,6 +55,22 @@ Buradaki name jsp dosyasındaki name ile eşleşir;
 
 •	**input type="submit"** bu elementin görevi formdaki verileri sunucuya göndermektedir. Bu element bir buton olarak karşımıza çıkar ve kullanıcının tıklamasıyla formdaki veriler işleme alınır. Butona tıklandığında veriler sunucuya gönderilir. Action özelliğinde belirtilen URL’e yönlendirilir. Metod özelliğine göre (get ve post) verileri sunucuya  iletir. 
 
+### Desin Pattern
+•	**Construction Injection**, bir objenin bagımlılıklarının bir constructor’a geçirilmesine denir.
+```java 
+public class Demo{ 
+	
+public class Book {
+	private final Fiction fictionBook;
+
+	public Book(Fiction fictionBook) {
+		this.fictionBook = fictionBook;
+	}
+}
+```
+
+
+•
 
 
 ## Ek Bilgiler
