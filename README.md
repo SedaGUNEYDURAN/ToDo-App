@@ -47,6 +47,13 @@ Buradaki name jsp dosyasındaki name ile eşleşir;
 
 **@Service**, bir classı servis olarak işaretlemek için kullanılır ve bu classlar Spring beanler olarak kaydedilir. Spring beanler olarak kaydedildikleri için de bu classlar, dependency injection kullarak diğer spring tarafından kullanılan bileşenlere enjekte(@Autowired ya da constructor injection kullanılarak) edilebilirler. 
 
+**@RequestMapping**, http isteği ile bir Java metodunu eşleştirir.  
+	•	"value", özelliği ile hangi URL'in bu metoda yönlendirileceğini belirleyebiliriz. 
+	•	"metod" özelliği ile hangi HTTP metodunun(GET, POST, PUT, DELETE vb.) kullanılacağını belirleyebiliriz. 
+	•	"params" , özelliği ile URL’deki parametreleri metodun parametreleri ile eşleştirebiliriz.
+	•	"headers" , özelliği ile  HTTP istek başlıklarını eşleştirebiliriz.
+	•	"consumes" ve "produces"  özelliği ile istek ve yanıt formatlarını(JSON, XML vb.) belirleyebiliriz.
+
 
 ## HTML
 •	Form method, HTML form gönderirken verilerin sunucuya nasıl iletileceğini belirleyen bir HTML ögesidir. Method niteliği formun içinde yer alır ve iki ana değer kabul eder;  
@@ -55,8 +62,8 @@ Buradaki name jsp dosyasındaki name ile eşleşir;
 
 •	**input type="submit"** bu elementin görevi formdaki verileri sunucuya göndermektedir. Bu element bir buton olarak karşımıza çıkar ve kullanıcının tıklamasıyla formdaki veriler işleme alınır. Butona tıklandığında veriler sunucuya gönderilir. Action özelliğinde belirtilen URL’e yönlendirilir. Metod özelliğine göre (get ve post) verileri sunucuya  iletir. 
 
-### Desin Pattern
-•	**Construction Injection**, bir objenin bagımlılıklarının bir constructor’a geçirilmesine denir.
+### Desing Pattern
+•	**Construction Injection**, bir objenin bağımlılıklarının bir constructor’a geçirilmesine denir.
 ```java 
 public class Demo{ 
 	
@@ -87,7 +94,7 @@ public class Book {
 
 ### Log Level 
 •	Log level sıralaması;
-	**OFF - FATAL - ERROR- WARN - INFO - DEBUG - TRACE - ALL **
+	**OFF - FATAL - ERROR- WARN - INFO - DEBUG - TRACE - ALL ** 
 •	**OFF** tamamen bütün logların kapalı olduğu, ALL bütün loğların açık olduğu log seviyesidir.  
 • 	**Trace** en detaylı bilgilerin verildiği log seviyesidir. Bu log seviyesinde harici ir log dosyası kullanımı gereklidir.   
 •	**Debug** yazılımcıların en çok kullanıdığı log seviyesidir.  
