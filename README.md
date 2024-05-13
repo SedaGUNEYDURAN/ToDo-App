@@ -75,7 +75,10 @@ Buradaki name jsp dosyasındaki name ile eşleşir;
 **<%@ taglib**, JSP sayfasında bir tag kütüphanesini tanımlar.
 **prefix="c"**, tag kütüphanesine bir ön ek atar. Bu ön ek, tag kütüphanesini kullanırken kullanılacaktır. c ön ekini c:out tagini kullanmak için kullanırız.
 **uri="https://docs.oracle.com/javaee/5/jstl/1.1/docs/tlddocs/c/tld-summary.html"**, bu özellik tag kütüphanesinin URI'sini belirtir, tag kütüphanesinin nerede bulunacağını belirtir.   
-• 	
+• 	**<th>**, tablo oluştururken, tablonun başlık cellini oluştururken kullanılır. 
+**<td>**, tabloya verileri kelmek için kullanılır.
+**<tr>** , tagi ile bir satır oluşturulur. 
+**<thead>**, tablonun bbaşlık satırlarını gruplandırmak için kullanılır
 ```html  
 			<table class="table">
 				<thead>
@@ -100,10 +103,7 @@ Buradaki name jsp dosyasındaki name ile eşleşir;
 
 ```
 
-**<th>**, tablo oluştururken, tablonun başlık cellini oluştururken kullanılır. 
-**<td>**, tabloya verileri kelmek için kullanılır.
-**<tr>** , tagi ile bir satır oluşturulur. 
-**<thead>**, tablonun bbaşlık satırlarını gruplandırmak için kullanılır. 
+. 
 
 
 ### Desing Pattern
