@@ -48,11 +48,11 @@ Buradaki name jsp dosyasındaki name ile eşleşir;
 **@Service**, bir classı servis olarak işaretlemek için kullanılır ve bu classlar Spring beanler olarak kaydedilir. Spring beanler olarak kaydedildikleri için de bu classlar, dependency injection kullarak diğer spring tarafından kullanılan bileşenlere enjekte(@Autowired ya da constructor injection kullanılarak) edilebilirler. 
 
 **@RequestMapping**, http isteği ile bir Java metodunu eşleştirir.  
-	•	"value", özelliği ile hangi URL'in bu metoda yönlendirileceğini belirleyebiliriz. 
-	•	"metod" özelliği ile hangi HTTP metodunun(GET, POST, PUT, DELETE vb.) kullanılacağını belirleyebiliriz. 
-	•	"params" , özelliği ile URL’deki parametreleri metodun parametreleri ile eşleştirebiliriz.
-	•	"headers" , özelliği ile  HTTP istek başlıklarını eşleştirebiliriz.
-	•	"consumes" ve "produces"  özelliği ile istek ve yanıt formatlarını(JSON, XML vb.) belirleyebiliriz.
+		•	"value", özelliği ile hangi URL'in bu metoda yönlendirileceğini belirleyebiliriz.  
+		•	"metod" özelliği ile hangi HTTP metodunun(GET, POST, PUT, DELETE vb.) kullanılacağını belirleyebiliriz.  
+		•	"params" , özelliği ile URL’deki parametreleri metodun parametreleri ile eşleştirebiliriz.   
+		•	"headers" , özelliği ile  HTTP istek başlıklarını eşleştirebiliriz.  
+		•	"consumes" ve "produces"  özelliği ile istek ve yanıt formatlarını(JSON, XML vb.) belirleyebiliriz.  
 
 
 ## HTML
