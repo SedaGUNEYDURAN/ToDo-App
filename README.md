@@ -55,6 +55,8 @@ Buradaki name jsp dosyasındaki name ile eşleşir;
 		•	"consumes" ve "produces"  özelliği ile istek ve yanıt formatlarını(JSON, XML vb.) belirleyebiliriz.  
 
 
+**@SessionAttributes**, sınıfın tüm metodları tarafından erişilebilecek nesneleri belirlemek için kullanılır.
+
 ## HTML
 •	Form method, HTML form gönderirken verilerin sunucuya nasıl iletileceğini belirleyen bir HTML ögesidir. Method niteliği formun içinde yer alır ve iki ana değer kabul eder;  
   	**Get** : Bu metodda form verileri URL’e eklenir ve sunucuya iletilir. Get metodu için veri boyutu(genellikle 2048 karakter) kısıtlıdır. Gizli verilerin gönderilmesinde güvenli değildir.(bilgiler URL’de açık duruyor nasıl güvenli olsun ?)   
@@ -69,7 +71,7 @@ Buradaki name jsp dosyasındaki name ile eşleşir;
 
 
 ### Desing Pattern
-•	**Construction Injection**, bir objenin bağımlılıklarının bir constructor’a geçirilmesine denir.
+•	**Construction Injection**, bir objenin bağımlılıklarının bir constructor’a geçirilmesidir.
 ```java 
 public class Demo{ 
 	
