@@ -100,10 +100,10 @@ Buradaki name jsp dosyasındaki name ile eşleşir;
 
 ```
 
-	**<th>**, tablo oluştururken, tablonun başlık cellini oluştururken kullanılır. 
-	**<td>**, tabloya verileri kelmek için kullanılır.
-	**<tr>**, tagi ile bir satır oluşturulur. 
-	**<thead>**, tablonun bbaşlık satırlarını gruplandırmak için kullanılır. 
+**<th>**, tablo oluştururken, tablonun başlık cellini oluştururken kullanılır. 
+**<td>**, tabloya verileri kelmek için kullanılır.
+**<tr>** , tagi ile bir satır oluşturulur. 
+**<thead>**, tablonun bbaşlık satırlarını gruplandırmak için kullanılır. 
 
 
 ### Desing Pattern
