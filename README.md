@@ -91,14 +91,18 @@ public class Book {
 ## Ek Bilgiler
 •	**Tomcat-embed-jasper**, java uygulamaların tam bir Tomcat sunucusu kullanmadan bile JSP işleme yetenekleri eklememizi sağlayan bir java kütüphanesidir. Spring Boot’un gömülü tomcat’ini kullanıyorsak JSP desteğini etkinleştirmek için projemize bu bağımlılığı eklemeliyiz.   
 •	**Java Server Pages Expression Language(JSP EL)**, bir jsp sayfasında dinamik olarak değerleri hesaplamak ve görüntülemek için kullanılan özel bir programlama dilidir.   
+•	**JavaServer  Pages Standard Tag Library(JSTL)**, erb sayfalarında sıklıkla kullanılan tekrarlayan göervleri yerine getirmek için oluşturulmuş etiketlerden oluşur. Birden fazla kütüphaneden oluşan bir koleksiyondur. En çok kullanılan JSTL jkütüphaneleri; XML tags, SQL tags, format tags, core tags(if,else,for vb temel işlemler).  
 •	**ModelMap**, Spring Framework’te bir model objesinin bir view’e bağlamak için kullanılan kütüphanedir. Model objesini saklamak ve view’i iletirken dinamik olarak değiştirmek için kullanılır.  Spring Framework’ün eski sürümlerinde daha yaygın olarak kullanılmaktadır. Daha yeni sürümlerde, Model classı tercih edilmektedir.     
 •	**Front Controller Pattern**, uygulamaya gelen tüm istekleri tek bir nokta karşılama ve yönlendirme amacıyla kullanılır. Tüm istekler bir front contoller classına girer, front controller istekleri analiz eder ve ilgili işlemi gerçekleştirdikten sonra uygun controllera yönlendirir. Bu URL, komut gibi bilgilere göre yapılır. İstek işlenir ve sonucu Front Controllera döner. Front Controller sonucu işleyerek clienta döndürür.  Bu sayede istek işleme süreci merkezileştirilir ve kod tekrar ile karmaşıklık azaltılır.   
 •	**Servlet**, Java’da web uygulamaları geliştirmek için kullanılan bir API’dır. HTTP isteklerini ve yanıtlarını işlemeyi sağlar. Servletler sunucu tarafında çalışır ve istemciye HTML, JSON, XML gibi formatlarda veri gönderir. Birden fazla istek işleyebilir ve her bir istek için ayrı threadler oluşturur. Servletler sayesinde dinamik web sayfaları ve tabanlı uygulamalar oluşturabiliriz.   
+•	**Glassfish**, developerların web uygulamalarını oluşturmak, dağıtmak ve yönetmek için gereken bir çok hizmeti tek platformda sunan açık kaynaklı bir platformdur. Bir web sitesini ziyaret ettiğimizde, bilgisayarmız sunucuya bir istek gönderir. Sunucu bu isteği işleyerek bir yanıt gönderir. Glassfish bu sunucuyu oluşturan ve yönetmemizi sağlayan yazılımdır.   
 •	**DispatcherServlet**, Spring frameworkün web uygulamalarında kullanılan merkezi bir servlettir. Gelen http isteklerini karşılar.  İstek URL’ini analiz eder. Uygun controllerı bulur ve çalıştırır. Controllerdan gelen modeli ve viewı işler ve sonucu clienta gönderir. Web.xml dosyasında tanımlıdır.     
 •	Pom.xml --> dependency management  
 •	Web.xml --> define web app configuration  
 •	Context.xml --> manage spring beans  
 •	NFRs(Non-Functional Requirements) --> implement non functional requirement
+
+
 
 ### Log Level 
 •	Log level sıralaması;
