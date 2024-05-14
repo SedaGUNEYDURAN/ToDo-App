@@ -12,11 +12,11 @@ public class ToDoService {
 	static{
 		todos.add(new ToDo(1,"Seda","SpringBoot",LocalDate.now().plusYears(1), 
 				false));
-		todos.add(new ToDo(1,"Seda","JavaScript",LocalDate.now().plusYears(2), 
+		todos.add(new ToDo(2,"Seda","JavaScript",LocalDate.now().plusYears(2), 
 				false));
-		todos.add(new ToDo(1,"Seda","Java",LocalDate.now().plusYears(3), 
+		todos.add(new ToDo(3,"Seda","Java",LocalDate.now().plusYears(3), 
 				false));
-		todos.add(new ToDo(1,"Seda","Html",LocalDate.now().plusYears(4), 
+		todos.add(new ToDo(4,"Seda","Html",LocalDate.now().plusYears(4), 
 				false));
 	}
 	
