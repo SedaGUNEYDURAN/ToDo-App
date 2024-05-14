@@ -1,6 +1,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <html>
 	<head>
+		<link href="/webjars/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" >
 		<title>List ToDo Page</title>
 	</head>
 	<body>
@@ -28,8 +29,9 @@
 					</c:forEach>
 				</tbody>
 			</table>
-
+			
 		</div>
-		
+		<script src="/webjars/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+		<script src="/webjars/jquery/1.9.1/jquery.min.js"></script>
 	</body>
 </html>
