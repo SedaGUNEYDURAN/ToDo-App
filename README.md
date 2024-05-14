@@ -144,3 +144,12 @@ public class Book {
 •	Eğer bir log seviyesi tanımlarsak; tanımladığımız log seviyesi ve üzerindeki loglar görülebilirken altındakiler görülmez. Örnek; log seviyesi error ise off,
  fatal ve error seviyesi loğlar görülebilecek ancak diğer loğlar görülemeyecektir.   
 
+### Git Komutları
+•	**Fast Forward Merge:** Bu işlemin yapılabilmesi için local brancimizin commit geçmişi remote branchimizin geçmişinin bir alt geçmişi olmalıdır. 
+```git
+	git pull --ff-only
+```
+•	**git pull --rebase**; Remote branchteki değişiklikleri local brachimize çeker ve aynı zamanda local commit geçmişimizi yeniden yazar. Sadece local commit geçmişimizi etkiler, remote geçmişini etkilemez. 
+
+•	**git rebase --abort**; halihazırda devam eden git rebase işlemini iptal etmek için kullanılır. Daha önce yeniden yazılmış commitler silinir ve local branch'imizin geçmişi, rebase işlemi başlamadan önceki haline getirilir. Yalnızca devam eden rebase işlemini iptal eder.. Tebase işlemi tamamlandıktan sonra kullanılamaz. 
+
