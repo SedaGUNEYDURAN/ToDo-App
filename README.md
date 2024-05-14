@@ -71,40 +71,7 @@ Buradaki name jsp dosyasındaki name ile eşleşir;
 •	**<%@ taglib**, JSP sayfasında bir tag kütüphanesini tanımlar. **prefix="c"**, tag kütüphanesine bir ön ek atar. Bu ön ek, tag kütüphanesini kullanırken kullanılacaktır. c ön ekini c:out tagini kullanmak için kullanırız. **uri="https://docs.oracle.com/javaee/5/jstl/1.1/docs/tlddocs/c/tld-summary.html"**, bu özellik tag kütüphanesinin URI'sini belirtir, tag kütüphanesinin nerede bulunacağını belirtir.
 ```html  
 <%@ taglib prefıx="c" uri="https://docs.oracle.com/javaee/5/jstl/1.1/docs/tlddocs/c/tld-summary.html" %>  
-```  
-<<<<<<< HEAD
-**<%@ taglib**, JSP sayfasında bir tag kütüphanesini tanımlar.
-**prefix="c"**, tag kütüphanesine bir ön ek atar. Bu ön ek, tag kütüphanesini kullanırken kullanılacaktır. c ön ekini c:out tagini kullanmak için kullanırız.
-**uri="https://docs.oracle.com/javaee/5/jstl/1.1/docs/tlddocs/c/tld-summary.html"**, bu özellik tag kütüphanesinin URI'sini belirtir, tag kütüphanesinin nerede bulunacağını belirtir.   
-•	**th**, tablo oluştururken, tablonun başlık cellini oluştururken kullanılır. **td**, tabloya verileri kelmek için kullanılır. **tr** , tagi ile bir satır oluşturulur. **thead**, tablonun bbaşlık satırlarını gruplandırmak için kullanılır.  
-
-```html  
-			<table class="table">
-				<thead>
-					<tr>
-						<th>id</th>
-						<th>Description</th>
-						<th>Target Date</th>
-						<th>Is Done?</th>
-					</tr>
-				</thead>
-				<tbody>		
-					<c:forEach items="${todos}" var="todo">
-						<tr>
-							<td>${todo.id}</td>
-							<td>${todo.description}</td>
-							<td>${todo.targetDate}</td>
-							<td>${todo.done}</td>
-						</tr>
-					</c:forEach>
-				</tbody>
-			</table>
-
-```
-
-. 
-=======
- 
+```    
 •	**th**, tablo oluştururken, tablonun başlık cellini oluştururken kullanılır. **td**, tabloya verileri eklemek için kullanılır. **tr** , tagi ile bir satır oluşturulur. **thead**, tablonun başlık satırlarını gruplandırmak için kullanılır.  
 
 ```html  
@@ -131,8 +98,6 @@ Buradaki name jsp dosyasındaki name ile eşleşir;
 
 ```
 •	**hr** tagı, web sayfamızda yatay çizgi oluşturmak için kullanırız. Kapatmamıza gerek yoktur. 
->>>>>>> 5ab306baccdb7c99a5c5fb3ee15539b036bb6efd
-
 
 ### Desing Pattern
 •	**Construction Injection**, bir objenin bağımlılıklarının bir constructor’a geçirilmesidir.
