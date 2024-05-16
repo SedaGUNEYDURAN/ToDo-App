@@ -97,7 +97,7 @@ Buradaki name jsp dosyasındaki name ile eşleşir;
 </table>
 
 ```
-•	**hr** tagı, web sayfamızda yatay çizgi oluşturmak için kullanırız. Kapatmamıza gerek yoktur. 
+•	**hr** tagı, web sayfamızda yatay çizgi oluşturmak için kullanırız. Kapatmamıza gerek yoktur.   
 •	**link href** tagı, html sayfamızı bir kaynağa bağlmak için kullanılır. **rel**, geçerli dökoman ile kaynak arasındaki ilişkiyi belirtir. **stylesheet**, bağlantılı kaynağın bir stil syfası olduğunu belirtir. **icon**, bağlantılı kaynağın bir favicon olduğunu belirtir. **script** bağlantılı kaynağın harici bir JavaScript dosyası olduğunu belirtir.   
 
 ```html
@@ -144,7 +144,8 @@ public class Book {
 •	NFRs(Non-Functional Requirements) --> implement non functional requirement
 •	```java
 return "redirect:/path"  or return "redirect:list-todos" 
-```  ifadesi belirli bir işlem tamamlandıktan sonra kullanıcıyı belirli bir URL'e(list-todos) yönlendirme yapmak için kullnılır. 
+```
+ifadesi belirli bir işlem tamamlandıktan sonra kullanıcıyı belirli bir URL'e(list-todos) yönlendirme yapmak için kullnılır.   
 
 
 
