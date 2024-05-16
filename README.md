@@ -141,13 +141,12 @@ public class Book {
 •	Pom.xml --> dependency management  
 •	Web.xml --> define web app configuration  
 •	Context.xml --> manage spring beans  
-•	NFRs(Non-Functional Requirements) --> implement non functional requirement
-•	```java
-return "redirect:/path"  or return "redirect:list-todos" 
-```
-ifadesi belirli bir işlem tamamlandıktan sonra kullanıcıyı belirli bir URL'e(list-todos) yönlendirme yapmak için kullnılır.   
-
-
+•	NFRs(Non-Functional Requirements) --> implement non functional requirement  
+•	Aşağıdaki ifade belirli bir işlem tamamlandıktan sonra kullanıcıyı belirli bir URL'e(list-todos) yönlendirme yapmak için kullanılır.  
+```java
+return "redirect:/path" 
+return "redirect:list-todos" 
+```  
 
 ### Log Level 
 •	Log level sıralaması;
