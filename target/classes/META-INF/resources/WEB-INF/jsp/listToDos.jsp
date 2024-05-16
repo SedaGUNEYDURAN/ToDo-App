@@ -5,7 +5,7 @@
 		<title>List ToDo Page</title>
 	</head>
 	<body>
-		<div>
+		<div class="container">
 			<div>Welcome ${name}<div>
 			<hr>
 			<h1>Your ToDo</h1>
