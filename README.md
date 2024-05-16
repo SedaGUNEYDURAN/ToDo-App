@@ -98,6 +98,18 @@ Buradaki name jsp dosyasındaki name ile eşleşir;
 
 ```
 •	**hr** tagı, web sayfamızda yatay çizgi oluşturmak için kullanırız. Kapatmamıza gerek yoktur. 
+•	**link href** tagı, html sayfamızı bir kaynağa bağlmak için kullanılır. **rel**, geçerli dökoman ile kaynak arasındaki ilişkiyi belirtir. **stylesheet**, bağlantılı kaynağın bir stil syfası olduğunu belirtir. **icon**, bağlantılı kaynağın bir favicon olduğunu belirtir. **script** bağlantılı kaynağın harici bir JavaScript dosyası olduğunu belirtir.   
+
+```html
+<link href="/webjars/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" >
+```
+•	**script src** tagı, web sayfamızı harici bir JavaScript dosyasına bağlamak için kullanılır. Web sayfamızın davranışını tanımlayan (JavaScript) sayfa yapısı ve içeriğini tanımlayan koddan(HTML) ayırmamızı sağlar. **src**, JavaScript dosyasının URL'ini belirtir. 
+
+```html
+<script src="/webjars/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+<script src="/webjars/jquery/1.9.1/jquery.min.js"></script>
+```
+•	**div class="container"**, web sayfasından belirli bir içeriği gruplamak, belirli bir genişlikte ve düzende göstermek için kullanılır. **div class="table"**, tablo verilerini düzenlemek için kullanılır. Bu sayede tablonun, stilini, botunu ve düzenini daha esnek bir şekilde kontrol etmek mümkündür. 
 
 ### Desing Pattern
 •	**Construction Injection**, bir objenin bağımlılıklarının bir constructor’a geçirilmesidir.
@@ -130,6 +142,9 @@ public class Book {
 •	Web.xml --> define web app configuration  
 •	Context.xml --> manage spring beans  
 •	NFRs(Non-Functional Requirements) --> implement non functional requirement
+•	```java
+return "redirect:/path"  or return "redirect:list-todos" 
+```  ifadesi belirli bir işlem tamamlandıktan sonra kullanıcıyı belirli bir URL'e(list-todos) yönlendirme yapmak için kullnılır. 
 
 
 
@@ -153,3 +168,7 @@ public class Book {
 
 •	**git rebase --abort**; halihazırda devam eden git rebase işlemini iptal etmek için kullanılır. Daha önce yeniden yazılmış commitler silinir ve local branch'imizin geçmişi, rebase işlemi başlamadan önceki haline getirilir. Yalnızca devam eden rebase işlemini iptal eder.. Tebase işlemi tamamlandıktan sonra kullanılamaz. 
 
+•	**git clone URL**; remote bir depoda bulunan bir Git repositoryisi üzerinde çalışmak için local makinemize indirmemizi sağlar. 
+```git
+	git clone https://github.com/SedaGUNEYDURAN/ToDo-App.git
+```
