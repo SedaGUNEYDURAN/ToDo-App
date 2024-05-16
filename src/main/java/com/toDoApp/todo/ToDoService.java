@@ -8,21 +8,25 @@ import org.springframework.stereotype.Service;
 @Service
 public class ToDoService {
 	private static List<ToDo> todos= new ArrayList<>();
+	private static int todosCount=0;
 	
 	static{
-		todos.add(new ToDo(1,"Seda","SpringBoot",LocalDate.now().plusYears(1), 
+		todos.add(new ToDo(++todosCount,"Seda","SpringBoot",LocalDate.now().plusYears(1), 
 				false));
-		todos.add(new ToDo(2,"Seda","JavaScript",LocalDate.now().plusYears(2), 
+		todos.add(new ToDo(++todosCount,"Seda","JavaScript",LocalDate.now().plusYears(2), 
 				false));
-		todos.add(new ToDo(3,"Seda","Java",LocalDate.now().plusYears(3), 
+		todos.add(new ToDo(++todosCount,"Seda","Java",LocalDate.now().plusYears(3), 
 				false));
-		todos.add(new ToDo(4,"Seda","Html",LocalDate.now().plusYears(4), 
+		todos.add(new ToDo(++todosCount,"Seda","Html",LocalDate.now().plusYears(4), 
 				false));
 	}
 	
 	public List <ToDo> findByUserName(String name){
 		return todos;
 	}
-	
+	public void addTodo(String username, String description, LocalDate targetDate, boolean done) {
+		ToDo todo=new ToDo(++todosCount, username,description,targetDate,done);
+		todos.add(todo);
+	}
 
 }
