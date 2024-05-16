@@ -6,8 +6,6 @@
 	</head>
 	<body>
 		<div class="container">
-			<div>Welcome ${name}<div>
-			<hr>
 			<h1>Your ToDo</h1>
 			<table class="table">
 				<thead>
@@ -29,7 +27,7 @@
 					</c:forEach>
 				</tbody>
 			</table>
-			
+			<a href="add-todo" class="btn btn-success">Add Todo</a>
 		</div>
 		<script src="/webjars/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 		<script src="/webjars/jquery/1.9.1/jquery.min.js"></script>

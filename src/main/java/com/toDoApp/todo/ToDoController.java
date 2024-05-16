@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.SessionAttributes;
 
 @Controller
@@ -24,5 +25,14 @@ public class ToDoController {
 		List<ToDo> todos = todoService.findByUserName("Seda");
 		model.addAttribute("todos",todos);
 		return "listToDos";
+	}
+	
+	@RequestMapping(value="add-todo", method=RequestMethod.GET)
+	public String showNewTodoPage(Model model) {
+		return "todo";
+	}
+	@RequestMapping(value="add-todo", method=RequestMethod.POST)
+	public String addNewTodo(Model model) {
+		return "redirect:list-todos";
 	}
 }
