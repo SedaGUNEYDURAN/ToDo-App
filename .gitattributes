@@ -1,1 +1,4 @@
 *.jsp linguist-language=JavaScipt
+*.java text linguist-language=Java
+*.js text linguist-language=JavaScript 
+*.jsp text linguist-language=JavaScript
