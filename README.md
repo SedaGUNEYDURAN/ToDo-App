@@ -109,7 +109,7 @@ Buradaki name jsp dosyasındaki name ile eşleşir;
 <script src="/webjars/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 <script src="/webjars/jquery/1.9.1/jquery.min.js"></script>
 ```
-•	**div class="container"**, web sayfasından belirli bir içeriği gruplamak, belirli bir genişlikte ve düzende göstermek için kullanılır. **div class="table"**, tablo verilerini düzenlemek için kullanılır. Bu sayede tablonun, stilini, botunu ve düzenini daha esnek bir şekilde kontrol etmek mümkündür.
+•	**div class="container"**, web sayfasından belirli bir içeriği gruplamak, belirli bir genişlikte ve düzende göstermek için kullanılır. **div class="table"**, tablo verilerini düzenlemek için kullanılır. Bu sayede tablonun, stilini, botunu ve düzenini daha esnek bir şekilde kontrol etmek mümkündür.  
 •	**cssClass="text-warning"**, metin rengini ayarlar. Genellikle metni sarı veya turuncu tonlara boyar. 
 
 ### Desing Pattern
