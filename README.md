@@ -109,7 +109,8 @@ Buradaki name jsp dosyasındaki name ile eşleşir;
 <script src="/webjars/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 <script src="/webjars/jquery/1.9.1/jquery.min.js"></script>
 ```
-•	**div class="container"**, web sayfasından belirli bir içeriği gruplamak, belirli bir genişlikte ve düzende göstermek için kullanılır. **div class="table"**, tablo verilerini düzenlemek için kullanılır. Bu sayede tablonun, stilini, botunu ve düzenini daha esnek bir şekilde kontrol etmek mümkündür. 
+•	**div class="container"**, web sayfasından belirli bir içeriği gruplamak, belirli bir genişlikte ve düzende göstermek için kullanılır. **div class="table"**, tablo verilerini düzenlemek için kullanılır. Bu sayede tablonun, stilini, botunu ve düzenini daha esnek bir şekilde kontrol etmek mümkündür.
+•	**cssClass="text-warning"**, metin rengini ayarlar. Genellikle metni sarı veya turuncu tonlara boyar. 
 
 ### Desing Pattern
 •	**Construction Injection**, bir objenin bağımlılıklarının bir constructor’a geçirilmesidir.
@@ -135,7 +136,9 @@ public class Book {
 •	**JavaServer  Pages Standard Tag Library(JSTL)**, erb sayfalarında sıklıkla kullanılan tekrarlayan göervleri yerine getirmek için oluşturulmuş etiketlerden oluşur. Birden fazla kütüphaneden oluşan bir koleksiyondur. En çok kullanılan JSTL jkütüphaneleri; XML tags, SQL tags, format tags, core tags(if,else,for vb temel işlemler).  
 •	**ModelMap**, Spring Framework’te bir model objesinin bir view’e bağlamak için kullanılan kütüphanedir. Model objesini saklamak ve view’i iletirken dinamik olarak değiştirmek için kullanılır.  Spring Framework’ün eski sürümlerinde daha yaygın olarak kullanılmaktadır. Daha yeni sürümlerde, Model classı tercih edilmektedir.     
 •	**Front Controller Pattern**, uygulamaya gelen tüm istekleri tek bir nokta karşılama ve yönlendirme amacıyla kullanılır. Tüm istekler bir front contoller classına girer, front controller istekleri analiz eder ve ilgili işlemi gerçekleştirdikten sonra uygun controllera yönlendirir. Bu URL, komut gibi bilgilere göre yapılır. İstek işlenir ve sonucu Front Controllera döner. Front Controller sonucu işleyerek clienta döndürür.  Bu sayede istek işleme süreci merkezileştirilir ve kod tekrar ile karmaşıklık azaltılır.   
-•	**Servlet**, Java’da web uygulamaları geliştirmek için kullanılan bir API’dır. HTTP isteklerini ve yanıtlarını işlemeyi sağlar. Servletler sunucu tarafında çalışır ve istemciye HTML, JSON, XML gibi formatlarda veri gönderir. Birden fazla istek işleyebilir ve her bir istek için ayrı threadler oluşturur. Servletler sayesinde dinamik web sayfaları ve tabanlı uygulamalar oluşturabiliriz.   
+•	**Servlet**, Java’da web uygulamaları geliştirmek için kullanılan bir API’dır. HTTP isteklerini ve yanıtlarını işlemeyi sağlar. Servletler sunucu tarafında çalışır ve istemciye HTML, JSON, XML gibi formatlarda veri gönderir. Birden fazla istek işleyebilir ve her bir istek için ayrı threadler oluşturur. Servletler sayesinde dinamik web sayfaları ve tabanlı uygulamalar oluşturabiliriz. 
+•	**DispatcherServlet**, Spring MVC framework'ün temel bir bileşenidir. Front controller olarak işlev görür.Spring uygulamasından gelen tüm HTTP isteklerini alır ve uygun şekilde (controller'a)yönlendirir, (view resolution işlemi yapar ve client'a yönlendirilecek HTML,JSON veya XML)yanıt verir.   
+•	**Spring-boot-starter-validation**, veri doğrulama işlemlerini kolaylaştırmak için kullanılan bir tooldur. Bunun için de bir çok anotasyon sağlar. **@NotNull**, alanın null olamayacağını belirtir. **@Size(min=, max=)**, alanın  boyutlarını sınırlar. **@Email**, alanın geçerli bir e-posta adresi olmasını sağlar. **@Pattern** alanın belirli bir regex desenine uymasını sağlar. Doğrulamalar, Sprıng MVC ile entegre olarak controller katmanında kolayca kullanılabilir.Örneğin; **@Valid**, anotasyonu ile birlikte kullanıldığında, controller metoduna gelen veri otomatik olarak doğrulanır.   
 •	**Glassfish**, developerların web uygulamalarını oluşturmak, dağıtmak ve yönetmek için gereken bir çok hizmeti tek platformda sunan açık kaynaklı bir platformdur. Bir web sitesini ziyaret ettiğimizde, bilgisayarmız sunucuya bir istek gönderir. Sunucu bu isteği işleyerek bir yanıt gönderir. Glassfish bu sunucuyu oluşturan ve yönetmemizi sağlayan yazılımdır.   
 •	**DispatcherServlet**, Spring frameworkün web uygulamalarında kullanılan merkezi bir servlettir. Gelen http isteklerini karşılar.  İstek URL’ini analiz eder. Uygun controllerı bulur ve çalıştırır. Controllerdan gelen modeli ve viewı işler ve sonucu clienta gönderir. Web.xml dosyasında tanımlıdır.     
 •	Pom.xml --> dependency management  
@@ -147,6 +150,7 @@ public class Book {
 return "redirect:/path" 
 return "redirect:list-todos" 
 ```  
+•	**BindingResult**, @Valid anotasyonu ile doğrulama işleminden sonra oluşan hataları tutar. Doğrulama hatalarına ilişkin ayrıntılı mesajlar sağlar. Verilerin bağlanması sırasında(örneğin, formdan gelen verilerin model nesnelerine dönüştürülmesi) oluşan hataları da içerir.  
 
 ### Log Level 
 •	Log level sıralaması;
