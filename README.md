@@ -129,7 +129,7 @@ Bir motodun başında kullanıldığında, bu metod model nesnesine veri eklemek
 •	**div class="container"**, web sayfasından belirli bir içeriği gruplamak, belirli bir genişlikte ve düzende göstermek için kullanılır. **div class="table"**, tablo verilerini düzenlemek için kullanılır. Bu sayede tablonun, stilini, botunu ve düzenini daha esnek bir şekilde kontrol etmek mümkündür.  
 •	**cssClass="text-warning"**, metin rengini ayarlar. Genellikle metni sarı veya turuncu tonlara boyar. 
 •	**form:errors path="description"**,  path hatanın görüntülenecek form alanının adını belirtir. Bu tagde description alanı ile ilgili bir hatanın görüntüleneceğini anlıyoruz. Form gönderildiğinde ve doğrulama  (@NotNull, @Size vs. notasyonları ile doğrulama ) başarısız olduğunda, framework hata nesnesini doğrulama sorunlarıyla ilgili ayrıntılarla doldurur. **form:errors** tagi daha sonra bu hatalara erişir ve bunları kullanıcıya anlaşılır bir şekilde sunar.  
-
+•	**href="delete-todo?id=${todo.id}"**, buradaki **?** URL'e ek olarak parametreler ekleceğini gösterir. id silinecek olan ToDo objesini temsil eder. = ifadesinden sonraki kısım id parametresine atanır. 
 ### Desing Pattern
 •	**Construction Injection**, bir objenin bağımlılıklarının bir constructor’a geçirilmesidir.
 ```java 
@@ -167,6 +167,10 @@ return "redirect:/path"
 return "redirect:list-todos" 
 ```  
 •	**BindingResult**, @Valid anotasyonu ile doğrulama işleminden sonra oluşan hataları tutar. Doğrulama hatalarına ilişkin ayrıntılı mesajlar sağlar. Verilerin bağlanması sırasında(örneğin, formdan gelen verilerin model nesnelerine dönüştürülmesi) oluşan hataları da içerir.  
+•	**Predicate**, java.util.function (functional programming) paketinde bulunan fonksiyonel bir arayüzdür. Bu arayüz, genellikle lambda ifadeleri veya metot referansları ile birlikte kullanılır. Bir girdi parametresine göre bir koşulun sağlanıp sağlanmadığını belirler. Predicate arayüzü, **test** adlı bir abstract metoda sahiptir.Bu metod, bir girdi alır ve belirli bir koşulu test ederek bir boolean değer döndürür. Aşağıdaki kod parçasında lambda ifadesi ToDo objesini(todoDelete) alır. getId() metoduyla id kontrol edilir ve objenin idsi ile id bilgisi eşitse true değilse false döner.   
+```java
+Predicate<? super ToDo> predicate=todoDelete->todoDelete.getId()==id;
+```java
 
 ### Log Level 
 •	Log level sıralaması;
