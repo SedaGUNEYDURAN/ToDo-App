@@ -30,7 +30,7 @@ public class ToDoService {
 		todos.add(todo);
 	}
 	public void deleteById(int id) {
-		Predicate<? super ToDo> predicate=todo->todo.getId()==id;
+		Predicate<? super ToDo> predicate=todoDelete->todoDelete.getId()==id;
 		todos.removeIf(predicate);
 	}
 
