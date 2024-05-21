@@ -170,7 +170,7 @@ return "redirect:list-todos"
 •	**Predicate**, java.util.function (functional programming) paketinde bulunan fonksiyonel bir arayüzdür. Bu arayüz, genellikle lambda ifadeleri veya metot referansları ile birlikte kullanılır. Bir girdi parametresine göre bir koşulun sağlanıp sağlanmadığını belirler. Predicate arayüzü, **test** adlı bir abstract metoda sahiptir.Bu metod, bir girdi alır ve belirli bir koşulu test ederek bir boolean değer döndürür. Aşağıdaki kod parçasında lambda ifadesi ToDo objesini(todoDelete) alır. getId() metoduyla id kontrol edilir ve objenin idsi ile id bilgisi eşitse true değilse false döner.   
 ```java
 Predicate<? super ToDo> predicate=todoDelete->todoDelete.getId()==id;
-```java
+```
 
 ### Log Level 
 •	Log level sıralaması;
