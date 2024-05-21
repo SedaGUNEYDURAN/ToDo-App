@@ -55,9 +55,26 @@ Buradaki name jsp dosyasındaki name ile eşleşir;
 		•	"consumes" ve "produces"  özelliği ile istek ve yanıt formatlarını(JSON, XML vb.) belirleyebiliriz.  
 
 
-**@SessionAttributes**, sınıfın tüm metodları tarafından erişilebilecek nesneleri belirlemek için kullanılır.
+**@SessionAttributes**, sınıfın tüm metodları tarafından erişilebilecek nesneleri belirlemek için kullanılır.  
+**@NotNull**, alanın null olamayacağını belirtir.  
+**@Size(min=, max=)**, alanın  boyutlarını sınırlar. **@Email**, alanın geçerli bir e-posta adresi olmasını sağlar.   
+**@Pattern** alanın belirli bir regex desenine uymasını sağlar. Doğrulamalar, Sprıng MVC ile entegre olarak controller katmanında kolayca kullanılabilir.Örneğin; **@Valid**, anotasyonu ile birlikte kullanıldığında, controller metoduna gelen veri otomatik olarak doğrulanır.   
+**@ModelAttribute**, bir controller metodunun parametresi olarak kullanıldığında(aşağıdaki örnekteki gibi), bu parametreyi velirtilen model nesnesi ile bağlar ve ilgili veri bağlama(data binding) işlemini gerçekleştirir.     
+```java
+@RequestMapping(value="add-todo", method=RequestMethod.POST)
+public String addNewTodo(ModelMap model, @ModelAttribute("todoPage")@Valid ToDo toDo, BindingResult result) {	
+	if(result.hasErrors()) {
+		return "todo";
+	}
+	String username=(String)model.get("name");
+	todoService.addTodo(username, toDo.getDescription(), LocalDate.now().plusYears(1), false);
+	return "redirect:list-todos";
+	}
+}
+```
+Bir motodun başında kullanıldığında, bu metod model nesnesine veri eklemek için kullanılır. Bu bir controller metodundan önce çalışır ve modele ek veriler eklememizi sağlar.   
 
-## HTML
+## HTML & JavaScript
 •	Form method, HTML form gönderirken verilerin sunucuya nasıl iletileceğini belirleyen bir HTML ögesidir. Method niteliği formun içinde yer alır ve iki ana değer kabul eder;  
   	**Get** : Bu metodda form verileri URL’e eklenir ve sunucuya iletilir. Get metodu için veri boyutu(genellikle 2048 karakter) kısıtlıdır. Gizli verilerin gönderilmesinde güvenli değildir.(bilgiler URL’de açık duruyor nasıl güvenli olsun ?)   
   	**Post** : Bu yöntemde form verileri HTTP gövdesinde gizli bir şekilde sunucuya iletilir. Get metodundan farklı olarak URL’de görünmezler. Post methodu daha fazla veri gönderilmesine izin verir ve gizli verilerin iletimi için daha güvenlidir.    
@@ -111,6 +128,7 @@ Buradaki name jsp dosyasındaki name ile eşleşir;
 ```
 •	**div class="container"**, web sayfasından belirli bir içeriği gruplamak, belirli bir genişlikte ve düzende göstermek için kullanılır. **div class="table"**, tablo verilerini düzenlemek için kullanılır. Bu sayede tablonun, stilini, botunu ve düzenini daha esnek bir şekilde kontrol etmek mümkündür.  
 •	**cssClass="text-warning"**, metin rengini ayarlar. Genellikle metni sarı veya turuncu tonlara boyar. 
+•	**form:errors path="description"**,  path hatanın görüntülenecek form alanının adını belirtir. Bu tagde description alanı ile ilgili bir hatanın görüntüleneceğini anlıyoruz. Form gönderildiğinde ve doğrulama  (@NotNull, @Size vs. notasyonları ile doğrulama ) başarısız olduğunda, framework hata nesnesini doğrulama sorunlarıyla ilgili ayrıntılarla doldurur. **form:errors** tagi daha sonra bu hatalara erişir ve bunları kullanıcıya anlaşılır bir şekilde sunar.  
 
 ### Desing Pattern
 •	**Construction Injection**, bir objenin bağımlılıklarının bir constructor’a geçirilmesidir.
@@ -126,19 +144,17 @@ public class Book {
 }
 ```
 
-
-•
+•	**Front Controller Pattern**, uygulamaya gelen tüm istekleri tek bir nokta karşılama ve yönlendirme amacıyla kullanılır. Tüm istekler bir front contoller classına girer, front controller istekleri analiz eder ve ilgili işlemi gerçekleştirdikten sonra uygun controllera yönlendirir. Bu URL, komut gibi bilgilere göre yapılır. İstek işlenir ve sonucu Front Controllera döner. Front Controller sonucu işleyerek clienta döndürür.  Bu sayede istek işleme süreci merkezileştirilir ve kod tekrar ile karmaşıklık azaltılır.   
 
 
 ## Ek Bilgiler
 •	**Tomcat-embed-jasper**, java uygulamaların tam bir Tomcat sunucusu kullanmadan bile JSP işleme yetenekleri eklememizi sağlayan bir java kütüphanesidir. Spring Boot’un gömülü tomcat’ini kullanıyorsak JSP desteğini etkinleştirmek için projemize bu bağımlılığı eklemeliyiz.   
 •	**Java Server Pages Expression Language(JSP EL)**, bir jsp sayfasında dinamik olarak değerleri hesaplamak ve görüntülemek için kullanılan özel bir programlama dilidir.   
 •	**JavaServer  Pages Standard Tag Library(JSTL)**, erb sayfalarında sıklıkla kullanılan tekrarlayan göervleri yerine getirmek için oluşturulmuş etiketlerden oluşur. Birden fazla kütüphaneden oluşan bir koleksiyondur. En çok kullanılan JSTL jkütüphaneleri; XML tags, SQL tags, format tags, core tags(if,else,for vb temel işlemler).  
-•	**ModelMap**, Spring Framework’te bir model objesinin bir view’e bağlamak için kullanılan kütüphanedir. Model objesini saklamak ve view’i iletirken dinamik olarak değiştirmek için kullanılır.  Spring Framework’ün eski sürümlerinde daha yaygın olarak kullanılmaktadır. Daha yeni sürümlerde, Model classı tercih edilmektedir.     
-•	**Front Controller Pattern**, uygulamaya gelen tüm istekleri tek bir nokta karşılama ve yönlendirme amacıyla kullanılır. Tüm istekler bir front contoller classına girer, front controller istekleri analiz eder ve ilgili işlemi gerçekleştirdikten sonra uygun controllera yönlendirir. Bu URL, komut gibi bilgilere göre yapılır. İstek işlenir ve sonucu Front Controllera döner. Front Controller sonucu işleyerek clienta döndürür.  Bu sayede istek işleme süreci merkezileştirilir ve kod tekrar ile karmaşıklık azaltılır.   
+•	**ModelMap**, Spring Framework’te bir model objesinin bir view’e bağlamak için kullanılan kütüphanedir. Model objesini saklamak ve view’i iletirken dinamik olarak değiştirmek için kullanılır.  Spring Framework’ün eski sürümlerinde daha yaygın olarak kullanılmaktadır. Daha yeni sürümlerde, Model classı tercih edilmektedir.       
 •	**Servlet**, Java’da web uygulamaları geliştirmek için kullanılan bir API’dır. HTTP isteklerini ve yanıtlarını işlemeyi sağlar. Servletler sunucu tarafında çalışır ve istemciye HTML, JSON, XML gibi formatlarda veri gönderir. Birden fazla istek işleyebilir ve her bir istek için ayrı threadler oluşturur. Servletler sayesinde dinamik web sayfaları ve tabanlı uygulamalar oluşturabiliriz. 
 •	**DispatcherServlet**, Spring MVC framework'ün temel bir bileşenidir. Front controller olarak işlev görür.Spring uygulamasından gelen tüm HTTP isteklerini alır ve uygun şekilde (controller'a)yönlendirir, (view resolution işlemi yapar ve client'a yönlendirilecek HTML,JSON veya XML)yanıt verir.   
-•	**Spring-boot-starter-validation**, veri doğrulama işlemlerini kolaylaştırmak için kullanılan bir tooldur. Bunun için de bir çok anotasyon sağlar. **@NotNull**, alanın null olamayacağını belirtir. **@Size(min=, max=)**, alanın  boyutlarını sınırlar. **@Email**, alanın geçerli bir e-posta adresi olmasını sağlar. **@Pattern** alanın belirli bir regex desenine uymasını sağlar. Doğrulamalar, Sprıng MVC ile entegre olarak controller katmanında kolayca kullanılabilir.Örneğin; **@Valid**, anotasyonu ile birlikte kullanıldığında, controller metoduna gelen veri otomatik olarak doğrulanır.   
+•	**Spring-boot-starter-validation**, veri doğrulama işlemlerini kolaylaştırmak için kullanılan bir tooldur. Bunun için de bir çok anotasyon sağlar; **@NotNull**, **@Size(min=, max=)**, **@Email**, **@Pattern** vs.
 •	**Glassfish**, developerların web uygulamalarını oluşturmak, dağıtmak ve yönetmek için gereken bir çok hizmeti tek platformda sunan açık kaynaklı bir platformdur. Bir web sitesini ziyaret ettiğimizde, bilgisayarmız sunucuya bir istek gönderir. Sunucu bu isteği işleyerek bir yanıt gönderir. Glassfish bu sunucuyu oluşturan ve yönetmemizi sağlayan yazılımdır.   
 •	**DispatcherServlet**, Spring frameworkün web uygulamalarında kullanılan merkezi bir servlettir. Gelen http isteklerini karşılar.  İstek URL’ini analiz eder. Uygun controllerı bulur ve çalıştırır. Controllerdan gelen modeli ve viewı işler ve sonucu clienta gönderir. Web.xml dosyasında tanımlıdır.     
 •	Pom.xml --> dependency management  
