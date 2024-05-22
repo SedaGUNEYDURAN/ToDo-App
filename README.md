@@ -167,9 +167,27 @@ return "redirect:/path"
 return "redirect:list-todos" 
 ```  
 •	**BindingResult**, @Valid anotasyonu ile doğrulama işleminden sonra oluşan hataları tutar. Doğrulama hatalarına ilişkin ayrıntılı mesajlar sağlar. Verilerin bağlanması sırasında(örneğin, formdan gelen verilerin model nesnelerine dönüştürülmesi) oluşan hataları da içerir.  
-•	**Predicate**, java.util.function (functional programming) paketinde bulunan fonksiyonel bir arayüzdür. Bu arayüz, genellikle lambda ifadeleri veya metot referansları ile birlikte kullanılır. Bir girdi parametresine göre bir koşulun sağlanıp sağlanmadığını belirler. Predicate arayüzü, **test** adlı bir abstract metoda sahiptir.Bu metod, bir girdi alır ve belirli bir koşulu test ederek bir boolean değer döndürür. Aşağıdaki kod parçasında lambda ifadesi ToDo objesini(todoDelete) alır. getId() metoduyla id kontrol edilir ve objenin idsi ile id bilgisi eşitse true değilse false döner.   
+•	**Predicate**, java.util.function (functional programming) paketinde bulunan fonksiyonel bir arayüzdür. Bu arayüz, genellikle lambda ifadeleri veya metot referansları ile birlikte kullanılır. Bir girdi parametresine göre bir koşulun sağlanıp sağlanmadığını belirler. Predicate arayüzü, **test** adlı bir abstract metoda sahiptir.Bu metod, bir girdi alır ve belirli bir koşulu test ederek bir boolean değer döndürür. Aşağıdaki kod parçasında lambda ifadesi ToDo objesini(todoDelete) alır. getId() metoduyla id kontrol edilir ve objenin idsi ile id bilgisi eşitse true değilse false döner. **removeIf()**, metodu List, Set vb. collection parametre olarak alır. Aşağıdaki kodda todos'u yineleyerek ve predicate için true değerini döndüren herhangi bir nesneyi(sağlayan id değerine eşleşen ToDo nesnesi dahil) siler.
 ```java
 Predicate<? super ToDo> predicate=todoDelete->todoDelete.getId()==id;
+todos.removeIf(predicate);
+```
+•	```java
+ToDo todo=todos.stream().filter(predicate).findFirst().orElse(null);
+```  
+	▪️todos.stream(): bu ifade todos'u bir streame dönüştürür. Veri kümesi üzserinde sıralı işlemler gerçekleştirmek iin kullanılan bir soyutlamadır. 
+	▪️.filter(predicate):streamdeki her bir ToDo objesine(todos) predicate adlı bir koşul fonksiyonunu uygular. Koşul true değeri dönerse obje streamde kalır, false değer dönerse streamden çıkarılır.
+ 	▪️findFirst(): streamdeki ilk ögeyi bulmaya yarar. Eğer birden fazla eşleşme varsa, ilk öğeyi döndürür.
+ 	▪️orElse(null): findFirst() metodu bir değer döndürmediği durumda kullanılır. Streamde eşleşen bir obje bulunamazsa orElse() metodu null değerini döndürür. 
+
+### Errors
+•	**java.lang.IllegalStateException**, form gönderimi sırasında Springin verileri bağlamak ve doğrulamak için ihtiyaç duyduğu objeleri bulamadığı anlamına gelir. Aşağıdaki kodda htmldeki modelAttribute niteliği gönderilen todo nesnesine bağlanabilmesi için modelAttribute adlandırılması aynı olmalıdır. Bu Spring MVC'nin BindingResult kullanarak doğrulama yapmasını sağlar.  
+```html
+		<form:form method="post" modelAttribute="todoPage">
+```
+```java
+		ToDo todo= todoService.findById(idUpdate);
+		model.addAttribute("todoPage", todo);
 ```
 
 ### Log Level 
