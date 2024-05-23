@@ -37,7 +37,7 @@ public class ToDoController {
 	@RequestMapping(value="add-todo", method=RequestMethod.GET)
 	public String showNewTodoPage(ModelMap model) {
 		String username=(String)model.getAttribute("name");
-		ToDo todo=new ToDo(0, username,"Default",LocalDate.now().plusYears(1),false);
+		ToDo todo=new ToDo(0, username,"",LocalDate.now().plusYears(1),false);
 		model.put("todoPage",todo);
 		return "todo";
 	}
@@ -57,6 +57,23 @@ public class ToDoController {
 	@RequestMapping("delete-todo")
 	public String deleteTodo(@RequestParam int idDelete) { 
 		todoService.deleteById(idDelete);
+		return "redirect:list-todos";
+	}
+	@RequestMapping(value="update-todo",method=RequestMethod.GET)
+	public String showUpdateToDoPage(ModelMap model,@RequestParam int idUpdate) { 
+		ToDo todo= todoService.findById(idUpdate);
+		model.addAttribute("todoPage", todo);
+		return "todo";
+	}
+	
+	@RequestMapping(value="update-todo", method=RequestMethod.POST)
+	public String updateTodo(ModelMap model, @ModelAttribute("todoPage")@Valid ToDo toDo, BindingResult result) {
+		
+		if(result.hasErrors()) {
+			return "todo";
+		}
+		String username=(String)model.get("name");
+		todoService.updateToDo(toDo);
 		return "redirect:list-todos";
 	}
 }
