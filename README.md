@@ -114,6 +114,16 @@ Bir motodun başında kullanıldığında, bu metod model nesnesine veri eklemek
 </table>
 
 ```
+•	**ul**, tagi sıralı olmayan bir liste oluşturmak için kullanılır. • madde işareti ile gösterilir.   
+•	**ol**, tagi sıralı liste oluşturur.   
+•	**li**, tagi bir liste ögesini tanımlamak için kullanılır<<ul> ve <ol> taglerinin içinde yer alır.   
+```html 
+<ul id="alisveris-listesi">
+  <li>Ekmek</li>
+  <li>Süt</li>
+  <li>Yumurta</li>
+</ul>
+```
 •	**hr** tagı, web sayfamızda yatay çizgi oluşturmak için kullanırız. Kapatmamıza gerek yoktur.   
 •	**link href** tagı, html sayfamızı bir kaynağa bağlmak için kullanılır. **rel**, geçerli dökoman ile kaynak arasındaki ilişkiyi belirtir. **stylesheet**, bağlantılı kaynağın bir stil syfası olduğunu belirtir. **icon**, bağlantılı kaynağın bir favicon olduğunu belirtir. **script** bağlantılı kaynağın harici bir JavaScript dosyası olduğunu belirtir.   
 
@@ -134,7 +144,7 @@ Bir motodun başında kullanıldığında, bu metod model nesnesine veri eklemek
 •	**#**, JavaSciptte HTML ögelerini idlerine göre seçmek için kullanılır. URL'de kullanıldığında bir web sayfasında belirli bir bölüme bağlanmak için kullanılır. Aşağıdaki kod URL'de sayfa.html sayfasındaki bolum2 bölümü açılır(sayfayı bolum2 kısmına kaydırır). 
 https://www.example.com/sayfa.html#bolum2
 •	**$**, jQuery ile HTML elemanlarını seçmek için kullanırız. HTML elemanlarının içeriğini değiştirebilir ve CSS özelliklerini manipüle edebiliriz.  jQuery'nin temel yapıtaşıdır ve  jQuery fonksiyonlarını çağırmak için kullanılır. Bu sayede HTML elemanlarını seçebilir, olayları yönetebilir, CSS VE html manipülasyonları yapabilir. AJAX işlemlerini gerçekleştirebiliriz.  
-•	**datepicker**, tarih seçicidir. $('#targetDate') targetDate idsine sahip bir HTML öğesini seçer. $('#targetDate').datepicker, targetDate idsine tarih seçme eklentisi uygular. <script type="text/javascript">, bir web sayfasında JavaScript kodunu çalıştırmak için kullanılır.
+•	**datepicker**, tarih seçicidir. $('#targetDate') targetDate idsine sahip bir HTML öğesini seçer. **$('#targetDate').datepicker**, targetDate idsine tarih seçme eklentisi uygular. <script type="text/javascript">, bir web sayfasında JavaScript kodunu çalıştırmak için kullanılır.
 ```html
 <script type="text/javascript">
 		$('#targetDate').datepicker({
@@ -186,13 +196,30 @@ return "redirect:list-todos"
 Predicate<? super ToDo> predicate=todoDelete->todoDelete.getId()==id;
 todos.removeIf(predicate);
 ```
-•	todos.stream(): bu ifade todos'u bir streame dönüştürür. Veri kümesi üzserinde sıralı işlemler gerçekleştirmek iin kullanılan bir soyutlamadır.**.filter(predicate)**:streamdeki her bir ToDo objesine(todos) predicate adlı bir koşul fonksiyonunu uygular. Koşul true değeri dönerse obje streamde kalır, false değer dönerse streamden çıkarılır. **findFirst()**: streamdeki ilk ögeyi bulmaya yarar. Eğer birden fazla eşleşme varsa, ilk öğeyi döndürür.  **orElse(null)**: findFirst() metodu bir değer döndürmediği durumda kullanılır. Streamde eşleşen bir obje bulunamazsa orElse() metodu null değerini döndürür.      
-```java
-ToDo todo=todos.stream().filter(predicate).findFirst().orElse(null);
-```
+
 •	**AJAX(Asynchronous JavaScript and XMl), web sayfalarının sayfa yenilemeden veri almasını veya servera veri göndermesini sağlayan tekniktir.   
 •	**DOM(Document Object Model)**, belgedeki her ögeyi bir obje olarak temsil eder ve bu objeler üzerinde çeşitli işlemler yapmamıza olanak tanır. Browserlar, web sayfasını yüklediğinde bu belgeyi DOM olarak tanımlar ve JavaScipt gibi dillerde bu modele erişim sağlanabilir. JavaSciprt kullanarak DOM ile etkileşime geçebilir, ögeleri seçebilir, manipüle edebilir, yeni ögeler ekleyebilir ve kaldırabiliriz.   
 
+### Kod Parçalarının Açıklamaları
+•	todos.stream(): bu ifade todos'u bir streame dönüştürür. Veri kümesi üzserinde sıralı işlemler gerçekleştirmek iin kullanılan bir soyutlamadır.**.filter(predicate)**:streamdeki her bir ToDo objesine(todos) predicate adlı bir koşul fonksiyonunu uygular. Koşul true değeri dönerse obje streamde kalır, false değer dönerse streamden çıkarılır. **findFirst()**: streamdeki ilk ögeyi bulmaya yarar. Eğer birden fazla eşleşme varsa, ilk öğeyi döndürür.  **orElse(null)**: findFirst() metodu bir değer döndürmediği durumda kullanılır. Streamde eşleşen bir obje bulunamazsa orElse() metodu null değerini döndürür.      
+```java
+ToDo todo=todos.stream().filter(predicate).findFirst().orElse(null);
+```  
+•	Aşağıdaki kod parçasının amacı bir web sayfasına Bootstrap framework kullanarak bir navbar(navigation çubuğu) tanımlamaktır.navbar classı navbar bileşenini tanımlamak için kullanılır. navbar-expand-md navbarın orta ekran ve üzerindeki boyutlarda genişlemesini sağlar. navbar-light(or dark) navbar temasını belirler.  bg-dark(or light) arka plan rengini ayarlar. m-3, margin bottom(alt kenar boşluğunu) 3 birim; p-1, padding(iç ve dış kenar boşlukları) 1 birim olarak ayarlar. navbar-brand, logosunu belirler. collapse navbar-collapse, navbar içeriklerinin açılır menü olarak davranmasını sağlar. navbar-nav classı, Bootstrap'ın navbardaki bağlantılarını şekillendirmek için kullanıldığı bir sınıftır. <ul class="navbar-nav">, navbardaki bağlantıları sıralı olmayan bir liste içinde gruplandırır. nav-item, Bootstrapın navbar ögelerini şekillendirmek için kullandığı bir classtır.   
+```html
+<nav class="navbar navbar-expand-md navbar-light bg-dark mb-3 p-1">
+			<a class="navbar-brand m-1" href="https://www.google.com/">Google</a>
+			<div class="collapse navbar-collapse">
+				<ul class="navbar-nav">
+					<li class="nav-item"><a class="nav-link" href="/">Home</a></li>
+					<li class="nav-item"><a class="nav-link" href="/list-todos">Todos</a></li>
+				</ul>
+			</div>
+				<ul class="navbar-nav">
+					<li class="nav-item"><a class="nav-link" href="/logout">Logout</a></li>
+				</ul>	
+		</nav>
+```  
 
 ### Errors
 •	**java.lang.IllegalStateException**, form gönderimi sırasında Springin verileri bağlamak ve doğrulamak için ihtiyaç duyduğu objeleri bulamadığı anlamına gelir. Aşağıdaki kodda htmldeki modelAttribute niteliği gönderilen todo nesnesine bağlanabilmesi için modelAttribute adlandırılması aynı olmalıdır. Bu Spring MVC'nin BindingResult kullanarak doğrulama yapmasını sağlar.  
