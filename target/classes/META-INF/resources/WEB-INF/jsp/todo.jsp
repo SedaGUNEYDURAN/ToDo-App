@@ -8,6 +8,19 @@
 		<title>Add ToDo Page</title>
 	</head>
 	<body>
+		<nav class="navbar navbar-expand-md navbar-light bg-dark mb-3 p-1">
+			<a class="navbar-brand m-1" href="https://www.google.com/">Google</a>
+			<div class="collapse navbar-collapse">
+				<ul class="navbar-nav">
+					<li class="nav-item"><a class="nav-link" href="/">Home</a></li>
+					<li class="nav-item"><a class="nav-link" href="/list-todos">Todos</a></li>
+				</ul>
+			</div>
+				<ul class="navbar-nav">
+					<li class="nav-item"><a class="nav-link" href="/logout">Logout</a></li>
+				</ul>	
+		</nav>
+
 		<div class="container">
 			<h1>Enter Todo Details</h1>
 			<form:form method="post" modelAttribute="todoPage">
