@@ -130,7 +130,20 @@ Bir motodun başında kullanıldığında, bu metod model nesnesine veri eklemek
 •	**cssClass="text-warning"**, metin rengini ayarlar. Genellikle metni sarı veya turuncu tonlara boyar. 
 •	**form:errors path="description"**,  path hatanın görüntülenecek form alanının adını belirtir. Bu tagde description alanı ile ilgili bir hatanın görüntüleneceğini anlıyoruz. Form gönderildiğinde ve doğrulama  (@NotNull, @Size vs. notasyonları ile doğrulama ) başarısız olduğunda, framework hata nesnesini doğrulama sorunlarıyla ilgili ayrıntılarla doldurur. **form:errors** tagi daha sonra bu hatalara erişir ve bunları kullanıcıya anlaşılır bir şekilde sunar.  
 •	**href="delete-todo?id=${todo.id}"**, buradaki **?** URL'e ek olarak parametreler ekleceğini gösterir. id silinecek olan ToDo objesini temsil eder. = ifadesinden sonraki kısım id parametresine atanır. 
-•	**fieldset class="mb-3" form içinde bir grup alana görsel bir gruplama oluşturmak için kullanılır. mb-3, bir ögenin alt kenar boşluğunu(margin bottom) 3 birim olarak arttırır. 
+•	**fieldset class="mb-3" form içinde bir grup alana görsel bir gruplama oluşturmak için kullanılır. mb-3, bir ögenin alt kenar boşluğunu(margin bottom) 3 birim olarak arttırır.   
+•	**#**, JavaSciptte HTML ögelerini idlerine göre seçmek için kullanılır. URL'de kullanıldığında bir web sayfasında belirli bir bölüme bağlanmak için kullanılır. Aşağıdaki kod URL'de sayfa.html sayfasındaki bolum2 bölümü açılır(sayfayı bolum2 kısmına kaydırır). 
+https://www.example.com/sayfa.html#bolum2
+•	**$**, jQuery ile HTML elemanlarını seçmek için kullanırız. HTML elemanlarının içeriğini değiştirebilir ve CSS özelliklerini manipüle edebiliriz.  jQuery'nin temel yapıtaşıdır ve  jQuery fonksiyonlarını çağırmak için kullanılır. Bu sayede HTML elemanlarını seçebilir, olayları yönetebilir, CSS VE html manipülasyonları yapabilir. AJAX işlemlerini gerçekleştirebiliriz.  
+•	**datepicker**, tarih seçicidir. $('#targetDate') targetDate idsine sahip bir HTML öğesini seçer. $('#targetDate').datepicker, targetDate idsine tarih seçme eklentisi uygular. <script type="text/javascript">, bir web sayfasında JavaScript kodunu çalıştırmak için kullanılır.
+```html
+<script type="text/javascript">
+		$('#targetDate').datepicker({
+			format:'dd/mm/yyyy'
+		 });
+		 </script>
+```
+
+
 ### Desing Pattern
 •	**Construction Injection**, bir objenin bağımlılıklarının bir constructor’a geçirilmesidir.
 ```java 
@@ -173,10 +186,14 @@ return "redirect:list-todos"
 Predicate<? super ToDo> predicate=todoDelete->todoDelete.getId()==id;
 todos.removeIf(predicate);
 ```
-• todos.stream(): bu ifade todos'u bir streame dönüştürür. Veri kümesi üzserinde sıralı işlemler gerçekleştirmek iin kullanılan bir soyutlamadır.**.filter(predicate)**:streamdeki her bir ToDo objesine(todos) predicate adlı bir koşul fonksiyonunu uygular. Koşul true değeri dönerse obje streamde kalır, false değer dönerse streamden çıkarılır. **findFirst()**: streamdeki ilk ögeyi bulmaya yarar. Eğer birden fazla eşleşme varsa, ilk öğeyi döndürür.  **orElse(null)**: findFirst() metodu bir değer döndürmediği durumda kullanılır. Streamde eşleşen bir obje bulunamazsa orElse() metodu null değerini döndürür.   
+•	todos.stream(): bu ifade todos'u bir streame dönüştürür. Veri kümesi üzserinde sıralı işlemler gerçekleştirmek iin kullanılan bir soyutlamadır.**.filter(predicate)**:streamdeki her bir ToDo objesine(todos) predicate adlı bir koşul fonksiyonunu uygular. Koşul true değeri dönerse obje streamde kalır, false değer dönerse streamden çıkarılır. **findFirst()**: streamdeki ilk ögeyi bulmaya yarar. Eğer birden fazla eşleşme varsa, ilk öğeyi döndürür.  **orElse(null)**: findFirst() metodu bir değer döndürmediği durumda kullanılır. Streamde eşleşen bir obje bulunamazsa orElse() metodu null değerini döndürür.      
 ```java
 ToDo todo=todos.stream().filter(predicate).findFirst().orElse(null);
-``` 
+```
+•	**AJAX(Asynchronous JavaScript and XMl), web sayfalarının sayfa yenilemeden veri almasını veya servera veri göndermesini sağlayan tekniktir.   
+•	**DOM(Document Object Model)**, belgedeki her ögeyi bir obje olarak temsil eder ve bu objeler üzerinde çeşitli işlemler yapmamıza olanak tanır. Browserlar, web sayfasını yüklediğinde bu belgeyi DOM olarak tanımlar ve JavaScipt gibi dillerde bu modele erişim sağlanabilir. JavaSciprt kullanarak DOM ile etkileşime geçebilir, ögeleri seçebilir, manipüle edebilir, yeni ögeler ekleyebilir ve kaldırabiliriz.   
+
+
 ### Errors
 •	**java.lang.IllegalStateException**, form gönderimi sırasında Springin verileri bağlamak ve doğrulamak için ihtiyaç duyduğu objeleri bulamadığı anlamına gelir. Aşağıdaki kodda htmldeki modelAttribute niteliği gönderilen todo nesnesine bağlanabilmesi için modelAttribute adlandırılması aynı olmalıdır. Bu Spring MVC'nin BindingResult kullanarak doğrulama yapmasını sağlar.  
 ```html
