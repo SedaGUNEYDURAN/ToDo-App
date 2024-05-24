@@ -180,6 +180,7 @@ public class Book {
 •	**Servlet**, Java’da web uygulamaları geliştirmek için kullanılan bir API’dır. HTTP isteklerini ve yanıtlarını işlemeyi sağlar. Servletler sunucu tarafında çalışır ve istemciye HTML, JSON, XML gibi formatlarda veri gönderir. Birden fazla istek işleyebilir ve her bir istek için ayrı threadler oluşturur. Servletler sayesinde dinamik web sayfaları ve tabanlı uygulamalar oluşturabiliriz. 
 •	**DispatcherServlet**, Spring MVC framework'ün temel bir bileşenidir. Front controller olarak işlev görür.Spring uygulamasından gelen tüm HTTP isteklerini alır ve uygun şekilde (controller'a)yönlendirir, (view resolution işlemi yapar ve client'a yönlendirilecek HTML,JSON veya XML)yanıt verir.   
 •	**Spring-boot-starter-validation**, veri doğrulama işlemlerini kolaylaştırmak için kullanılan bir tooldur. Bunun için de bir çok anotasyon sağlar; **@NotNull**, **@Size(min=, max=)**, **@Email**, **@Pattern** vs.  
+•	**spring-boot-starter-security**, uygulamaya güvenlik özelliklerini eklemeyi kolaylaştıran bağımlılıktır. Spring Security kütüphanelerini otomatik olarak ekler. Kimlik dıoğrulama, oturum yönetme, yetkilendirme gibi bileşenleri içerir. 
 •	**Glassfish**, developerların web uygulamalarını oluşturmak, dağıtmak ve yönetmek için gereken bir çok hizmeti tek platformda sunan açık kaynaklı bir platformdur. Bir web sitesini ziyaret ettiğimizde, bilgisayarmız sunucuya bir istek gönderir. Sunucu bu isteği işleyerek bir yanıt gönderir. Glassfish bu sunucuyu oluşturan ve yönetmemizi sağlayan yazılımdır.   
 •	**DispatcherServlet**, Spring frameworkün web uygulamalarında kullanılan merkezi bir servlettir. Gelen http isteklerini karşılar.  İstek URL’ini analiz eder. Uygun controllerı bulur ve çalıştırır. Controllerdan gelen modeli ve viewı işler ve sonucu clienta gönderir. Web.xml dosyasında tanımlıdır.     
 •	Pom.xml --> dependency management  
@@ -198,7 +199,7 @@ Predicate<? super ToDo> predicate=todoDelete->todoDelete.getId()==id;
 todos.removeIf(predicate);
 ```
 
-•	**AJAX(Asynchronous JavaScript and XMl), web sayfalarının sayfa yenilemeden veri almasını veya servera veri göndermesini sağlayan tekniktir.   
+•	**AJAX(Asynchronous JavaScript and XMl)**, web sayfalarının sayfa yenilemeden veri almasını veya servera veri göndermesini sağlayan tekniktir.   
 •	**DOM(Document Object Model)**, belgedeki her ögeyi bir obje olarak temsil eder ve bu objeler üzerinde çeşitli işlemler yapmamıza olanak tanır. Browserlar, web sayfasını yüklediğinde bu belgeyi DOM olarak tanımlar ve JavaScipt gibi dillerde bu modele erişim sağlanabilir. JavaSciprt kullanarak DOM ile etkileşime geçebilir, ögeleri seçebilir, manipüle edebilir, yeni ögeler ekleyebilir ve kaldırabiliriz.   
 
 ### Kod Parçalarının Açıklamaları
