@@ -117,14 +117,14 @@ Bir motodun başında kullanıldığında, bu metod model nesnesine veri eklemek
 ```
 •	**ul**, tagi sıralı olmayan bir liste oluşturmak için kullanılır. • madde işareti ile gösterilir.   
 •	**ol**, tagi sıralı liste oluşturur.   
-•	**li**, tagi bir liste ögesini tanımlamak için kullanılır<<ul> ve <ol> taglerinin içinde yer alır.   
+•	**li**, tagi bir liste ögesini tanımlamak için kullanılır ul ve ol taglerinin içinde yer alır.   
 ```html 
 <ul id="alisveris-listesi">
   <li>Ekmek</li>
   <li>Süt</li>
   <li>Yumurta</li>
 </ul>
-```
+```  
 •	**hr** tagı, web sayfamızda yatay çizgi oluşturmak için kullanırız. Kapatmamıza gerek yoktur.   
 •	**link href** tagı, html sayfamızı bir kaynağa bağlmak için kullanılır. **rel**, geçerli dökoman ile kaynak arasındaki ilişkiyi belirtir. **stylesheet**, bağlantılı kaynağın bir stil syfası olduğunu belirtir. **icon**, bağlantılı kaynağın bir favicon olduğunu belirtir. **script** bağlantılı kaynağın harici bir JavaScript dosyası olduğunu belirtir.   
 
