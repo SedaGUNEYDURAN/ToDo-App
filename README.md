@@ -57,7 +57,8 @@ Buradaki name jsp dosyasındaki name ile eşleşir;
 
 **@SessionAttributes**, sınıfın tüm metodları tarafından erişilebilecek nesneleri belirlemek için kullanılır.  
 **@NotNull**, alanın null olamayacağını belirtir.  
-**@Size(min=, max=)**, alanın  boyutlarını sınırlar. **@Email**, alanın geçerli bir e-posta adresi olmasını sağlar.   
+**@Size(min=, max=)**, alanın  boyutlarını sınırlar.    
+**@Email**, alanın geçerli bir e-posta adresi olmasını sağlar.   
 **@Pattern** alanın belirli bir regex desenine uymasını sağlar. Doğrulamalar, Sprıng MVC ile entegre olarak controller katmanında kolayca kullanılabilir.Örneğin; **@Valid**, anotasyonu ile birlikte kullanıldığında, controller metoduna gelen veri otomatik olarak doğrulanır.   
 **@ModelAttribute**, bir controller metodunun parametresi olarak kullanıldığında(aşağıdaki örnekteki gibi), bu parametreyi velirtilen model nesnesi ile bağlar ve ilgili veri bağlama(data binding) işlemini gerçekleştirir.     
 ```java
@@ -138,12 +139,12 @@ Bir motodun başında kullanıldığında, bu metod model nesnesine veri eklemek
 <script src="/webjars/jquery/1.9.1/jquery.min.js"></script>
 ```
 •	**div class="container"**, web sayfasından belirli bir içeriği gruplamak, belirli bir genişlikte ve düzende göstermek için kullanılır. **div class="table"**, tablo verilerini düzenlemek için kullanılır. Bu sayede tablonun, stilini, botunu ve düzenini daha esnek bir şekilde kontrol etmek mümkündür.  
-•	**cssClass="text-warning"**, metin rengini ayarlar. Genellikle metni sarı veya turuncu tonlara boyar. 
+•	**cssClass="text-warning"**, metin rengini ayarlar. Genellikle metni sarı veya turuncu tonlara boyar.    
 •	**form:errors path="description"**,  path hatanın görüntülenecek form alanının adını belirtir. Bu tagde description alanı ile ilgili bir hatanın görüntüleneceğini anlıyoruz. Form gönderildiğinde ve doğrulama  (@NotNull, @Size vs. notasyonları ile doğrulama ) başarısız olduğunda, framework hata nesnesini doğrulama sorunlarıyla ilgili ayrıntılarla doldurur. **form:errors** tagi daha sonra bu hatalara erişir ve bunları kullanıcıya anlaşılır bir şekilde sunar.  
 •	**href="delete-todo?id=${todo.id}"**, buradaki **?** URL'e ek olarak parametreler ekleceğini gösterir. id silinecek olan ToDo objesini temsil eder. = ifadesinden sonraki kısım id parametresine atanır. 
 •	**fieldset class="mb-3" form içinde bir grup alana görsel bir gruplama oluşturmak için kullanılır. mb-3, bir ögenin alt kenar boşluğunu(margin bottom) 3 birim olarak arttırır.   
 •	**#**, JavaSciptte HTML ögelerini idlerine göre seçmek için kullanılır. URL'de kullanıldığında bir web sayfasında belirli bir bölüme bağlanmak için kullanılır. Aşağıdaki kod URL'de sayfa.html sayfasındaki bolum2 bölümü açılır(sayfayı bolum2 kısmına kaydırır). 
-https://www.example.com/sayfa.html#bolum2
+https://www.example.com/sayfa.html#bolum2   
 •	**$**, jQuery ile HTML elemanlarını seçmek için kullanırız. HTML elemanlarının içeriğini değiştirebilir ve CSS özelliklerini manipüle edebiliriz.  jQuery'nin temel yapıtaşıdır ve  jQuery fonksiyonlarını çağırmak için kullanılır. Bu sayede HTML elemanlarını seçebilir, olayları yönetebilir, CSS VE html manipülasyonları yapabilir. AJAX işlemlerini gerçekleştirebiliriz.  
 •	**datepicker**, tarih seçicidir. $('#targetDate') targetDate idsine sahip bir HTML öğesini seçer. **$('#targetDate').datepicker**, targetDate idsine tarih seçme eklentisi uygular. <script type="text/javascript">, bir web sayfasında JavaScript kodunu çalıştırmak için kullanılır.
 ```html
@@ -177,10 +178,10 @@ public class Book {
 •	**Java Server Pages Expression Language(JSP EL)**, bir jsp sayfasında dinamik olarak değerleri hesaplamak ve görüntülemek için kullanılan özel bir programlama dilidir.   
 •	**JavaServer  Pages Standard Tag Library(JSTL)**, erb sayfalarında sıklıkla kullanılan tekrarlayan göervleri yerine getirmek için oluşturulmuş etiketlerden oluşur. Birden fazla kütüphaneden oluşan bir koleksiyondur. En çok kullanılan JSTL jkütüphaneleri; XML tags, SQL tags, format tags, core tags(if,else,for vb temel işlemler).  
 •	**ModelMap**, Spring Framework’te bir model objesinin bir view’e bağlamak için kullanılan kütüphanedir. Model objesini saklamak ve view’i iletirken dinamik olarak değiştirmek için kullanılır.  Spring Framework’ün eski sürümlerinde daha yaygın olarak kullanılmaktadır. Daha yeni sürümlerde, Model classı tercih edilmektedir.       
-•	**Servlet**, Java’da web uygulamaları geliştirmek için kullanılan bir API’dır. HTTP isteklerini ve yanıtlarını işlemeyi sağlar. Servletler sunucu tarafında çalışır ve istemciye HTML, JSON, XML gibi formatlarda veri gönderir. Birden fazla istek işleyebilir ve her bir istek için ayrı threadler oluşturur. Servletler sayesinde dinamik web sayfaları ve tabanlı uygulamalar oluşturabiliriz. 
+•	**Servlet**, Java’da web uygulamaları geliştirmek için kullanılan bir API’dır. HTTP isteklerini ve yanıtlarını işlemeyi sağlar. Servletler sunucu tarafında çalışır ve istemciye HTML, JSON, XML gibi formatlarda veri gönderir. Birden fazla istek işleyebilir ve her bir istek için ayrı threadler oluşturur. Servletler sayesinde dinamik web sayfaları ve tabanlı uygulamalar oluşturabiliriz.    
 •	**DispatcherServlet**, Spring MVC framework'ün temel bir bileşenidir. Front controller olarak işlev görür.Spring uygulamasından gelen tüm HTTP isteklerini alır ve uygun şekilde (controller'a)yönlendirir, (view resolution işlemi yapar ve client'a yönlendirilecek HTML,JSON veya XML)yanıt verir.   
 •	**Spring-boot-starter-validation**, veri doğrulama işlemlerini kolaylaştırmak için kullanılan bir tooldur. Bunun için de bir çok anotasyon sağlar; **@NotNull**, **@Size(min=, max=)**, **@Email**, **@Pattern** vs.  
-•	**spring-boot-starter-security**, uygulamaya güvenlik özelliklerini eklemeyi kolaylaştıran bağımlılıktır. Spring Security kütüphanelerini otomatik olarak ekler. Kimlik dıoğrulama, oturum yönetme, yetkilendirme gibi bileşenleri içerir. 
+•	**spring-boot-starter-security**, uygulamaya güvenlik özelliklerini eklemeyi kolaylaştıran bağımlılıktır. Spring Security kütüphanelerini otomatik olarak ekler. Kimlik dıoğrulama, oturum yönetme, yetkilendirme gibi bileşenleri içerir.    
 •	**Glassfish**, developerların web uygulamalarını oluşturmak, dağıtmak ve yönetmek için gereken bir çok hizmeti tek platformda sunan açık kaynaklı bir platformdur. Bir web sitesini ziyaret ettiğimizde, bilgisayarmız sunucuya bir istek gönderir. Sunucu bu isteği işleyerek bir yanıt gönderir. Glassfish bu sunucuyu oluşturan ve yönetmemizi sağlayan yazılımdır.   
 •	**DispatcherServlet**, Spring frameworkün web uygulamalarında kullanılan merkezi bir servlettir. Gelen http isteklerini karşılar.  İstek URL’ini analiz eder. Uygun controllerı bulur ve çalıştırır. Controllerdan gelen modeli ve viewı işler ve sonucu clienta gönderir. Web.xml dosyasında tanımlıdır.     
 •	Pom.xml --> dependency management  
@@ -235,8 +236,8 @@ ToDo todo=todos.stream().filter(predicate).findFirst().orElse(null);
 
 ### Log Level 
 •	Log level sıralaması;
-	**OFF - FATAL - ERROR- WARN - INFO - DEBUG - TRACE - ALL ** 
-•	**OFF** tamamen bütün logların kapalı olduğu, ALL bütün loğların açık olduğu log seviyesidir.  
+	**OFF - FATAL - ERROR- WARN - INFO - DEBUG - TRACE - ALL **    
+•	**Off** tamamen bütün logların kapalı olduğu, ALL bütün loğların açık olduğu log seviyesidir.  
 • 	**Trace** en detaylı bilgilerin verildiği log seviyesidir. Bu log seviyesinde harici ir log dosyası kullanımı gereklidir.   
 •	**Debug** yazılımcıların en çok kullanıdığı log seviyesidir.  
 •	**Info** genellikle son kullanıcılar tarafından kullanılan log seviyesidir.   
