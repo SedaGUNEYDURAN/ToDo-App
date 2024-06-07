@@ -1,4 +1,11 @@
 # SpringBoot Notlarım 
+
+## Spring Container 
+•	Spring uygulamaları, bağımlılıklarını yönetmek ve çözmek için bir Spring container'ı kullanır. Uygulamanın çeşitli bean'lerini içerir ve yönetir. Uygulamanın konfigürasyonunu merkezi bir yerden yönetir. XML, anotasyonlar ve Java tabanlı konfigürasyon sınıfları kullanarak bean'lerin nasıl oluşturulacağını ve yapılandırılacağını belirler. Uygulama başladığında container oluşturulur ve konfigürasyona bağlı olarak bean'ler yüklenir.Bir bean ihtiyaç duyulduğunda, container bu bean'i oluşturur ve gerekli bağımlılıkları inject eder. Uygulama çalıştığı sürece container, bean'lerin yaşam döngüsünü yönetir. @SpringBootApplicaion notasyonu, Spring container'ı başlatır.  Spring container türleri; **BeanFactory** ve **ApplicationContext**.       		
+	
+> **BeanFactory**, en temel container türüdür. Bean'lerin lazy loading ile yüklenmesini sağlar.   
+> **ApplicationContext**, en yaygın kullanılan container türüdür. BeanFactory'in tüm özelliklerine sahiptir. Ulusallaştırma(i18n), event publishing ve AOP(Aspect-Oriented Programming) gibi özelliklere sahiptir.
+
 ## Properties Dosyası
 •	spring.mvc.view.suffix, dosya uzantısını belirtmek için kullanılır.  
 spring.mvc.view.prefix, Spring MVC’de kullanılan bir yapılandırma ayarıdır.Diyelim ki uygulamada **/src/main/resources/META-INF/resources/WEB-INF/jsp/fileName.jsp** pathinde fileName.jsp dosyası bulunuyor. Bu dosyayı kullanabilmek için ; 
@@ -21,6 +28,17 @@ return "fileName";
 
 
 ## Annotations
+**@SpringBootApplication**, Spring Boot uygulamamızın başlatılması ve yapılandırılması için gerekli olan temel bileşenleri sağlar. SpringApplication.run yönetimi, Spring containerı başlatır. Aşağıdaki örnekte ToDoAppApplication sınıfınfaki konfigürasyonları tarar ve bean'leri oluşturur. 
+```java  
+@SpringBootApplication
+public class ToDoAppApplication {
+
+	public static void main(String[] args) {
+		SpringApplication.run(ToDoAppApplication.class, args);
+	}
+
+}
+```   
 **@ResponseBody** annotation’ı, bir controller methodunun return değerin doğrudan http respondun gövdesine yazdırmaya yarar. Bu annotayion ile @Controller annotation’ı birlikte kullanılmalıdır. 
 
 **@Controller** annotation’ı, bir classın web isteklerini bir web controller’ı olarak tanımlamak için kullanılır. Bu controllerlar http isteklerine farklı şekillerde yanıt verir. @RequestMapping(“/course”) içeren bir  metot için /course adresine gelen GET isteklerini işler.  JSON veri formatında gerçekleştirir.   
@@ -73,7 +91,8 @@ public String addNewTodo(ModelMap model, @ModelAttribute("todoPage")@Valid ToDo 
 	}
 }
 ```
-Bir motodun başında kullanıldığında, bu metod model nesnesine veri eklemek için kullanılır. Bu bir controller metodundan önce çalışır ve modele ek veriler eklememizi sağlar.   
+Bir motodun başında kullanıldığında, bu metod model nesnesine veri eklemek için kullanılır. Bu bir controller metodundan önce çalışır ve modele ek veriler eklememizi sağlar. 
+**@Configuration**, sınıfın bir kaynak bean tanımı içerdiğini belirtir. Spring bu class'ı configürasyon class'ı olarak  kullanır.Bean'lerin uygulamanın Spring containerına eklemektedir.  
 
 ## HTML & JavaScript
 •	Form method, HTML form gönderirken verilerin sunucuya nasıl iletileceğini belirleyen bir HTML ögesidir. Method niteliği formun içinde yer alır ve iki ana değer kabul eder;  
@@ -174,6 +193,7 @@ public class Book {
 
 
 ## Ek Bilgiler
+
 •	**Tomcat-embed-jasper**, java uygulamaların tam bir Tomcat sunucusu kullanmadan bile JSP işleme yetenekleri eklememizi sağlayan bir java kütüphanesidir. Spring Boot’un gömülü tomcat’ini kullanıyorsak JSP desteğini etkinleştirmek için projemize bu bağımlılığı eklemeliyiz.   
 •	**Java Server Pages Expression Language(JSP EL)**, bir jsp sayfasında dinamik olarak değerleri hesaplamak ve görüntülemek için kullanılan özel bir programlama dilidir.   
 •	**JavaServer  Pages Standard Tag Library(JSTL)**, erb sayfalarında sıklıkla kullanılan tekrarlayan göervleri yerine getirmek için oluşturulmuş etiketlerden oluşur. Birden fazla kütüphaneden oluşan bir koleksiyondur. En çok kullanılan JSTL jkütüphaneleri; XML tags, SQL tags, format tags, core tags(if,else,for vb temel işlemler).  
@@ -202,7 +222,7 @@ todos.removeIf(predicate);
 
 •	**AJAX(Asynchronous JavaScript and XMl)**, web sayfalarının sayfa yenilemeden veri almasını veya servera veri göndermesini sağlayan tekniktir.   
 •	**DOM(Document Object Model)**, belgedeki her ögeyi bir obje olarak temsil eder ve bu objeler üzerinde çeşitli işlemler yapmamıza olanak tanır. Browserlar, web sayfasını yüklediğinde bu belgeyi DOM olarak tanımlar ve JavaScipt gibi dillerde bu modele erişim sağlanabilir. JavaSciprt kullanarak DOM ile etkileşime geçebilir, ögeleri seçebilir, manipüle edebilir, yeni ögeler ekleyebilir ve kaldırabiliriz.   
-
+•	**LDAP(Lightweight Directory Access Protocol)**, 
 ### Kod Parçalarının Açıklamaları
 •	todos.stream(): bu ifade todos'u bir streame dönüştürür. Veri kümesi üzserinde sıralı işlemler gerçekleştirmek iin kullanılan bir soyutlamadır.**.filter(predicate)**:streamdeki her bir ToDo objesine(todos) predicate adlı bir koşul fonksiyonunu uygular. Koşul true değeri dönerse obje streamde kalır, false değer dönerse streamden çıkarılır. **findFirst()**: streamdeki ilk ögeyi bulmaya yarar. Eğer birden fazla eşleşme varsa, ilk öğeyi döndürür.  **orElse(null)**: findFirst() metodu bir değer döndürmediği durumda kullanılır. Streamde eşleşen bir obje bulunamazsa orElse() metodu null değerini döndürür.      
 ```java
