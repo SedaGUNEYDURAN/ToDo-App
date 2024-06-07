@@ -91,8 +91,8 @@ public String addNewTodo(ModelMap model, @ModelAttribute("todoPage")@Valid ToDo 
 	}
 }
 ```
-Bir motodun başında kullanıldığında, bu metod model nesnesine veri eklemek için kullanılır. Bu bir controller metodundan önce çalışır ve modele ek veriler eklememizi sağlar. 
-**@Configuration**, sınıfın bir kaynak bean tanımı içerdiğini belirtir. Spring bu class'ı configürasyon class'ı olarak  kullanır.Bean'lerin uygulamanın Spring containerına eklemektedir.  
+Bir motodun başında kullanıldığında, bu metod model nesnesine veri eklemek için kullanılır. Bu bir controller metodundan önce çalışır ve modele ek veriler eklememizi sağlar.   
+**@Configuration**, sınıfın bir kaynak bean tanımı içerdiğini belirtir. Spring bu class'ı configürasyon class'ı olarak  kullanır.Bean'lerin uygulamanın Spring containerına eklemektedir. @Configuration anotasyonunun kullanıldığı classlarda, bean tanımları @Bean anotasyonu ile yapılır. 
 
 ## HTML & JavaScript
 •	Form method, HTML form gönderirken verilerin sunucuya nasıl iletileceğini belirleyen bir HTML ögesidir. Method niteliği formun içinde yer alır ve iki ana değer kabul eder;  
@@ -218,11 +218,18 @@ return "redirect:list-todos"
 ```java
 Predicate<? super ToDo> predicate=todoDelete->todoDelete.getId()==id;
 todos.removeIf(predicate);
-```
-
+```   
+•	**InMemoryUserDetailsManager**, Spring Security'de kullanıcı bilgilerini bellekte(RAM'de) saklamak için kullanılır ve uygulama kapatıldığında bu bilgiler kaybolur. Kullanıcı kimlik doğrulama işlemlerini yönetmek ve kullanıcı bilgilerini doğrulamak için kullanılan bir 'UserDetailsService' uygulamasıdır. 
+•	**BCryptPasswordEncoder**, parolaları hashleyip, salt ekler. Parolaların kırılmasını zorlaştırır.   
 •	**AJAX(Asynchronous JavaScript and XMl)**, web sayfalarının sayfa yenilemeden veri almasını veya servera veri göndermesini sağlayan tekniktir.   
-•	**DOM(Document Object Model)**, belgedeki her ögeyi bir obje olarak temsil eder ve bu objeler üzerinde çeşitli işlemler yapmamıza olanak tanır. Browserlar, web sayfasını yüklediğinde bu belgeyi DOM olarak tanımlar ve JavaScipt gibi dillerde bu modele erişim sağlanabilir. JavaSciprt kullanarak DOM ile etkileşime geçebilir, ögeleri seçebilir, manipüle edebilir, yeni ögeler ekleyebilir ve kaldırabiliriz.   
-•	**LDAP(Lightweight Directory Access Protocol)**, 
+•	**DOM(Document Object Model)**, belgedeki her ögeyi bir obje olarak temsil eder ve bu objeler üzerinde çeşitli işlemler yapmamıza olanak tanır. Browserlar, web sayfasını yüklediğinde bu belgeyi DOM olarak tanımlar ve JavaScipt gibi dillerde bu modele erişim sağlanabilir. JavaSciprt kullanarak DOM ile etkileşime geçebilir, ögeleri seçebilir, manipüle edebilir, yeni ögeler ekleyebilir ve kaldırabiliriz.     
+
+
+•	**LDAP(Lightweight Directory Access Protocol)**,    
+•	**AOP(Aspect-Oriented Programming)**,   
+
+
+
 ### Kod Parçalarının Açıklamaları
 •	todos.stream(): bu ifade todos'u bir streame dönüştürür. Veri kümesi üzserinde sıralı işlemler gerçekleştirmek iin kullanılan bir soyutlamadır.**.filter(predicate)**:streamdeki her bir ToDo objesine(todos) predicate adlı bir koşul fonksiyonunu uygular. Koşul true değeri dönerse obje streamde kalır, false değer dönerse streamden çıkarılır. **findFirst()**: streamdeki ilk ögeyi bulmaya yarar. Eğer birden fazla eşleşme varsa, ilk öğeyi döndürür.  **orElse(null)**: findFirst() metodu bir değer döndürmediği durumda kullanılır. Streamde eşleşen bir obje bulunamazsa orElse() metodu null değerini döndürür.      
 ```java
