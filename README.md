@@ -219,8 +219,12 @@ return "redirect:list-todos"
 Predicate<? super ToDo> predicate=todoDelete->todoDelete.getId()==id;
 todos.removeIf(predicate);
 ```   
-•	**InMemoryUserDetailsManager**, Spring Security'de kullanıcı bilgilerini bellekte(RAM'de) saklamak için kullanılır ve uygulama kapatıldığında bu bilgiler kaybolur. Kullanıcı kimlik doğrulama işlemlerini yönetmek ve kullanıcı bilgilerini doğrulamak için kullanılan bir 'UserDetailsService' uygulamasıdır. 
-•	**BCryptPasswordEncoder**, parolaları hashleyip, salt ekler. Parolaların kırılmasını zorlaştırır.   
+•	**InMemoryUserDetailsManager**, Spring Security'de kullanıcı bilgilerini bellekte(RAM'de) saklamak için kullanılır ve uygulama kapatıldığında bu bilgiler kaybolur. Kullanıcı kimlik doğrulama işlemlerini yönetmek ve kullanıcı bilgilerini doğrulamak için kullanılan bir 'UserDetailsService' uygulamasıdır.    
+•	**BCryptPasswordEncoder**, parolaları hashleyip, salt ekler. Parolaların kırılmasını zorlaştırır.      
+•	**SecurityContextHolder**; Spring Security'nin kimlik doğrulama ve yetkilendirme süreçlerini yönetmek ve güvenlik bilgilerinin her yerden erişilebilir olmasını sağlar. Geçerli oturum açmış kullanıcını kimlik bilgilerini tutar; 
+```java  
+Authentication authentication=SecurityContextHolder.getContext().getAuthentication();  
+```       
 •	**AJAX(Asynchronous JavaScript and XMl)**, web sayfalarının sayfa yenilemeden veri almasını veya servera veri göndermesini sağlayan tekniktir.   
 •	**DOM(Document Object Model)**, belgedeki her ögeyi bir obje olarak temsil eder ve bu objeler üzerinde çeşitli işlemler yapmamıza olanak tanır. Browserlar, web sayfasını yüklediğinde bu belgeyi DOM olarak tanımlar ve JavaScipt gibi dillerde bu modele erişim sağlanabilir. JavaSciprt kullanarak DOM ile etkileşime geçebilir, ögeleri seçebilir, manipüle edebilir, yeni ögeler ekleyebilir ve kaldırabiliriz.     
 
