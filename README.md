@@ -109,7 +109,7 @@ Bir motodun başında kullanıldığında, bu metod model nesnesine veri eklemek
 ```html  
 <%@ taglib prefıx="c" uri="https://docs.oracle.com/javaee/5/jstl/1.1/docs/tlddocs/c/tld-summary.html" %>  
 ```
-•	**title**, web sayfasının başlığını tanımlamak için kullanılır. Web sayfasını açtığımızda browserın sekmesinde görüntülenen metidir. 
+•	**title**, web sayfasının başlığını tanımlamak için kullanılır. Web sayfasını açtığımızda browserın sekmesinde görüntülenen metidir.   
 •	**th**, tablo oluştururken, tablonun başlık cellini oluştururken kullanılır. **td**, tabloya verileri eklemek için kullanılır. **tr** , tagi ile bir satır oluşturulur. **thead**, tablonun başlık satırlarını gruplandırmak için kullanılır.  
 
 ```html  
